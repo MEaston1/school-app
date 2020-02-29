@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CourseTitle" parent="@android:style/TextAppearance.Material.Medium">
+        <item name="android:textColor">@color/fluorescent_orange</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>
