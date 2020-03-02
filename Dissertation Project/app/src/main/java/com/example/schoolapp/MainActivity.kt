@@ -3,6 +3,7 @@ package com.example.schoolapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.schoolapp.more.MoreActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 
