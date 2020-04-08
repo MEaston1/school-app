@@ -10,7 +10,7 @@ import kotlinx.android.synthetic.main.chat_to_row.view.*
 
 class ChatFromItem(val text: String, val user: User): Item<GroupieViewHolder>() {
     override fun bind(viewHolder: GroupieViewHolder, position: Int) {
-        viewHolder.itemView.textView_from_row.text
+        viewHolder.itemView.textView_from_row.text = text
         val uri = user.profileImageUrl
         val targetImageView = viewHolder.itemView.imageView_chat_from_row
         Picasso.get().load(uri).into(targetImageView)
