@@ -27,6 +27,11 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.example.schoolapp.misc.MoreListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
         <activity android:name="com.example.schoolapp.registerlogin.RegisterActivity" />
         <activity
             android:name="com.example.schoolapp.registerlogin.LoginActivity"

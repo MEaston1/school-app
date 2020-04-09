@@ -1053,6 +1053,8 @@ drawable ic_launcher_foreground
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_person_add_black_24dp
+drawable ic_power_settings_new_black_24dp
 drawable letter
 drawable log_out
 drawable medical_form
@@ -1085,6 +1087,7 @@ drawable tooltip_frame_dark
 drawable tooltip_frame_light
 id ALT
 id CTRL
+id CapImageView
 id FUNCTION
 id FeaturesList
 id META
@@ -1218,7 +1221,6 @@ id icon_group
 id icon_only
 id ifRoom
 id image
-id imageView
 id imageView_chat_from_row
 id imageView_chat_to_row
 id imageView_latest_message
@@ -1236,6 +1238,9 @@ id line3
 id listMode
 id list_item
 id login_button_login
+id mainactivity_profile_image
+id mainactivity_username_msg
+id mainactivity_welcome_back_msg
 id masked
 id menu_new_message
 id menu_sign_out
@@ -1420,6 +1425,7 @@ layout activity_login
 layout activity_main
 layout activity_more
 layout activity_more_layout
+layout activity_more_list
 layout activity_new_message
 layout activity_register
 layout chat_from_row

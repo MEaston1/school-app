@@ -96,9 +96,9 @@
         app:srcCompat="@drawable/consent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/CapImageView"
         android:layout_width="230dp"
-        android:layout_height="72dp"
+        android:layout_height="100dp"
         android:contentDescription="TODO"
         android:rotation="20"
         app:layout_constraintBottom_toBottomOf="@+id/bottomColour"
@@ -108,5 +108,46 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.126"
         app:srcCompat="@drawable/graduation_cap" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/mainactivity_profile_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="120dp"
+        app:civ_border_color="@android:color/black"
+        app:civ_border_width="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CapImageView"
+        app:srcCompat="@drawable/log_out" />
+
+    <TextView
+        android:id="@+id/mainactivity_username_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Username"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainactivity_welcome_back_msg" />
+
+    <TextView
+        android:id="@+id/mainactivity_welcome_back_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Welcome back"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainactivity_profile_image" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

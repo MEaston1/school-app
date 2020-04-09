@@ -14,12 +14,9 @@ import com.example.schoolapp.models.User
 import com.example.schoolapp.views.LatestMessageRow
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import com.squareup.picasso.Picasso
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
-import com.xwray.groupie.Item
 import kotlinx.android.synthetic.main.activity_latest_messages.*
-import kotlinx.android.synthetic.main.latest_message_row.view.*
 
 class LatestMessagesActivity : AppCompatActivity() {
 
