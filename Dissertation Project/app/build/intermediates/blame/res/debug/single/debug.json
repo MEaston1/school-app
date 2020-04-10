@@ -4,6 +4,10 @@
         "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_signout.xml.flat",
+        "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\drawable-v24\\ic_signout.xml"
+    },
+    {
         "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\drawable_newspaper.png.flat",
         "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\drawable\\newspaper.png"
     },
@@ -28,6 +32,10 @@
         "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\drawable\\more.png"
     },
     {
+        "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_about.xml.flat",
+        "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\drawable-v24\\ic_about.xml"
+    },
+    {
         "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\drawable_medical_forms.png.flat",
         "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\drawable\\medical_forms.png"
     },
@@ -38,6 +46,10 @@
     {
         "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_login.xml.flat",
         "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_consent_forms.xml.flat",
+        "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\drawable-v24\\ic_consent_forms.xml"
     },
     {
         "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
@@ -52,6 +64,10 @@
         "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\drawable\\medical_form.png"
     },
     {
+        "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_messages.xml.flat",
+        "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\drawable-v24\\ic_messages.xml"
+    },
+    {
         "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_more.xml.flat",
         "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\layout\\activity_more.xml"
     },
@@ -60,20 +76,16 @@
         "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\layout\\activity_more_layout.xml"
     },
     {
-        "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\layout\\activity_main.xml"
+        "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\layout_chat_from_row.xml.flat",
+        "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\layout\\chat_from_row.xml"
     },
     {
         "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\layout_chat_from_row.xml.flat",
-        "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\layout\\chat_from_row.xml"
-    },
-    {
-        "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_more_list.xml.flat",
-        "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\layout\\activity_more_list.xml"
+        "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
         "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_new_message.xml.flat",
@@ -86,10 +98,6 @@
     {
         "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_power_settings_new_black_24dp.xml.flat",
-        "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\drawable\\ic_power_settings_new_black_24dp.xml"
     },
     {
         "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
@@ -112,12 +120,28 @@
         "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\layout\\activity_latest_messages.xml"
     },
     {
+        "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\layout_nav_header.xml.flat",
+        "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\layout\\nav_header.xml"
+    },
+    {
         "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
         "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_calendar.xml.flat",
+        "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\drawable-v24\\ic_calendar.xml"
+    },
+    {
+        "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_announcements.xml.flat",
+        "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\drawable-v24\\ic_announcements.xml"
+    },
+    {
+        "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_person_add.xml.flat",
+        "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\drawable\\ic_person_add.xml"
     },
     {
         "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\drawable_log_out.png.flat",
@@ -138,6 +162,10 @@
     {
         "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\drawable_letter.png.flat",
         "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\drawable\\letter.png"
+    },
+    {
+        "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_absence.xml.flat",
+        "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\drawable-v24\\ic_absence.xml"
     },
     {
         "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\drawable_medicine.png.flat",
@@ -164,6 +192,10 @@
         "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\drawable\\consent.png"
     },
     {
+        "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\layout_content_main.xml.flat",
+        "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\layout\\content_main.xml"
+    },
+    {
         "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
@@ -178,6 +210,10 @@
     {
         "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_person_add_black_24dp.xml.flat",
         "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\drawable\\ic_person_add_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_home.xml.flat",
+        "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\drawable-v24\\ic_home.xml"
     },
     {
         "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\drawable_absence.png.flat",

@@ -93,7 +93,7 @@ class LatestMessagesActivity : AppCompatActivity() {
 
 
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+   override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item?.itemId){
             R.id.menu_new_message -> {
             val intent = Intent(this, NewMessageActivity::class.java)
@@ -104,7 +104,7 @@ class LatestMessagesActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.nav_menu, menu)
+        menuInflater.inflate(R.menu.logout_menu, menu)
         return super.onCreateOptionsMenu(menu)
     }
 }

@@ -45,6 +45,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-storage:19.1.1'
     implementation 'com.google.firebase:firebase-database:19.2.1'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.google.android.material:material:1.0.0'
     //recyclerview
     implementation "com.xwray:groupie:2.7.0"
     implementation 'com.squareup.picasso:picasso:2.71828'

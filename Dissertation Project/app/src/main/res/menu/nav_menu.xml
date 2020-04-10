@@ -1,10 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/menu_new_message"
-        android:icon="@drawable/ic_person_add_black_24dp"
-        android:title="New Message"
-        app:showAsAction="ifRoom"/>
+    <group>
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="Home"/>
+        <item
+            android:id="@+id/nav_messages"
+            android:icon="@drawable/ic_messages"
+            android:title="Messages"/>
+        <item
+            android:id="@+id/nav_calendar"
+            android:icon="@drawable/ic_calendar"
+            android:title="Calendar"/>
+        <item
+            android:id="@+id/nav_announcements"
+            android:icon="@drawable/ic_announcements"
+            android:title="Announcements"/>
+    </group>
+    <item android:title="Forms">
+        <menu>
+            <item
+                android:id="@+id/nav_consent_forms"
+                android:icon="@drawable/ic_consent_forms"
+                android:title="consent forms"/>
+            <item
+                android:id="@+id/nav_absence"
+                android:icon="@drawable/ic_absence"
+                android:title="Absence leave"/>
+        </menu>
+    </item>
 
+
+
+    <item android:title="Additional">
+        <menu>
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_about"
+                android:title="About Parent Connect"/>
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_signout"
+                android:title="Sign Out"/>
+        </menu>
+    </item>
 </menu>
