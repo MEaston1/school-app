@@ -28,6 +28,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     lateinit var toolbar: Toolbar
     lateinit var drawerLayout: DrawerLayout
     lateinit var navView: NavigationView
+    lateinit var navHeaderImageView: ImageView
+    lateinit var navHeaderTextView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,6 +61,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
     }
     private fun getUser(){
+        val headerView = navView.getHeaderView(0)
+        navHeaderImageView = headerView.findViewById(R.id.navHeaderImageView)
+        navHeaderTextView = headerView.findViewById(R.id.navHeaderTextView)
         val welcomeName: TextView = findViewById(R.id.mainactivity_username_msg)
         val userPicture: ImageView = findViewById(R.id.mainactivity_profile_image)
         val currentUser = FirebaseAuth.getInstance().currentUser // find the logged in user id from firebase
@@ -68,7 +73,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             override fun onDataChange(snapShot: DataSnapshot) {
                 val user = snapShot.getValue(User::class.java)
                 Picasso.get().load(user?.profileImageUrl).into(userPicture)
+                Picasso.get().load(user?.profileImageUrl).into(navHeaderImageView)
                 welcomeName.text = user?.username
+                navHeaderTextView.text = user?.username
 
             }
             override fun onCancelled(p0: DatabaseError) {
@@ -91,6 +98,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 Toast.makeText(this, "Update clicked", Toast.LENGTH_SHORT).show()
             }
             R.id.nav_consent_forms -> {
+                Toast.makeText(this, "Update clicked", Toast.LENGTH_SHORT).show()
+            }
+            R.id.nav_medical_form -> {
                 Toast.makeText(this, "Update clicked", Toast.LENGTH_SHORT).show()
             }
             R.id.nav_absence -> {

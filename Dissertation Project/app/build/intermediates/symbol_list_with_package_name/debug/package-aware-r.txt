@@ -791,6 +791,7 @@ dimen abc_text_size_subhead_material
 dimen abc_text_size_subtitle_material_toolbar
 dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
+dimen app_bar_height
 dimen cardview_compat_inset_shadow
 dimen cardview_default_elevation
 dimen cardview_default_radius
@@ -847,6 +848,7 @@ dimen design_tab_text_size_2line
 dimen design_textinput_caption_translate_y
 dimen disabled_alpha_material_dark
 dimen disabled_alpha_material_light
+dimen fab_margin
 dimen fastscroll_default_thickness
 dimen fastscroll_margin
 dimen fastscroll_minimum_range
@@ -923,6 +925,7 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+dimen text_margin
 dimen tooltip_corner_radius
 dimen tooltip_horizontal_padding
 dimen tooltip_margin
@@ -1056,6 +1059,7 @@ drawable ic_consent_forms
 drawable ic_home
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_medical
 drawable ic_messages
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
@@ -1150,6 +1154,7 @@ id action_menu_presenter
 id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
+id action_settings
 id action_text
 id actions
 id activity_chooser_view_content
@@ -1230,7 +1235,6 @@ id icon_group
 id icon_only
 id ifRoom
 id image
-id imageView
 id imageView_chat_from_row
 id imageView_chat_to_row
 id imageView_latest_message
@@ -1262,6 +1266,8 @@ id moreButton
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
+id navHeaderImageView
+id navHeaderTextView
 id nav_about
 id nav_absence
 id nav_announcements
@@ -1269,6 +1275,7 @@ id nav_calendar
 id nav_consent_forms
 id nav_home
 id nav_logout
+id nav_medical_form
 id nav_messages
 id nav_view
 id navigation_header_container
@@ -1480,6 +1487,7 @@ layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 layout user_row_new_message
 menu logout_menu
+menu menu_about
 menu nav_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
@@ -1522,6 +1530,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string action_settings
 string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
@@ -1555,6 +1564,7 @@ string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
 string hide_bottom_view_on_scroll_behavior
+string large_text
 string mtrl_chip_close_icon_content_description
 string password_toggle_content_description
 string path_password_eye
@@ -1564,6 +1574,7 @@ string path_password_strike_through
 string project_id
 string search_menu_title
 string status_bar_notification_info_overflow
+string title_activity_about
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
@@ -1571,7 +1582,9 @@ style Animation_AppCompat_DropDownUp
 style Animation_AppCompat_Tooltip
 style Animation_Design_BottomSheetDialog
 style AppTheme
+style AppTheme_AppBarOverlay
 style AppTheme_NoActionBar
+style AppTheme_PopupOverlay
 style Base_AlertDialog_AppCompat
 style Base_AlertDialog_AppCompat_Light
 style Base_Animation_AppCompat_Dialog

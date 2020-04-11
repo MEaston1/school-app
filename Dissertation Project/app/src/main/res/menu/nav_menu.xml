@@ -26,6 +26,10 @@
                 android:icon="@drawable/ic_consent_forms"
                 android:title="consent forms"/>
             <item
+                android:id="@+id/nav_medical_form"
+                android:icon="@drawable/ic_medical"
+                android:title="Medical forms"/>
+            <item
                 android:id="@+id/nav_absence"
                 android:icon="@drawable/ic_absence"
                 android:title="Absence leave"/>
