@@ -49,7 +49,7 @@ class RegisterActivity : AppCompatActivity() {  // class extends AppCompatActivi
         }
     }
 
-    var selectedPhotoUri: Uri? = null                 // crates a uri variable for the selected photo, uris allow images to be cobverted untio data that can be added to a JSON file
+    var selectedPhotoUri: Uri? = null                 // crates a uri variable for the selected photo, uris allow images to be converted into data that can be added to a JSON file
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {              // This function displays the photo collection on the phone used
         super.onActivityResult(requestCode, resultCode, data)
@@ -116,7 +116,7 @@ class RegisterActivity : AppCompatActivity() {  // class extends AppCompatActivi
             }
     }
 
-    private fun saveUserToFirebaseDatabase(profileImageUrl: String){                    //this function saves the user to the remote Firenbase Database and Authentification
+    private fun saveUserToFirebaseDatabase(profileImageUrl: String){                    //this function saves the user to the remote Firebase Database
         val uid = FirebaseAuth.getInstance().uid ?: ""
         val ref = FirebaseDatabase.getInstance().getReference("/users/$uid")
 
