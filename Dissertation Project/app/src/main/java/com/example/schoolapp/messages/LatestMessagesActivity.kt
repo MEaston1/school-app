@@ -57,7 +57,7 @@ class LatestMessagesActivity : AppCompatActivity() {
         val ref = FirebaseDatabase.getInstance().getReference("/latest-messages/$fromId")
         ref.addChildEventListener(object: ChildEventListener{
             override fun onChildChanged(p0: DataSnapshot, p1: String?) {
-                val chatMessage = p0.getValue(ChatMessage::class.java) ?: return
+                val chatMessage = p0.getValue(ChatMessage::class.java) ?: return        // unwrapped using the elvis operator
                 latestMessagesMap[p0.key!!] = chatMessage
                 refreshRecyclerviewMessages()
             }
