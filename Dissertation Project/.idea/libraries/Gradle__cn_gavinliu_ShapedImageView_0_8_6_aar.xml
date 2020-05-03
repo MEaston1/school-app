@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: cn.gavinliu:ShapedImageView:0.8.6@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7b03af162657e338ef9baf60f84dba21/jetified-ShapedImageView-0.8.6/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7b03af162657e338ef9baf60f84dba21/jetified-ShapedImageView-0.8.6/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/cn.gavinliu/ShapedImageView/0.8.6/33ac2e9dbed97b65a5f9bd00e9b8ed9fc4ac8a7/ShapedImageView-0.8.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

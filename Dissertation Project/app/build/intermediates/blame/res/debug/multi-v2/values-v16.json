@@ -24,12 +24,31 @@
                         "endOffsets": "223"
                     },
                     "to": {
-                        "startLines": "3",
+                        "startLines": "4",
                         "startColumns": "4",
-                        "startOffsets": "121",
-                        "endLines": "6",
+                        "startOffsets": "219",
+                        "endLines": "7",
                         "endColumns": "12",
-                        "endOffsets": "289"
+                        "endOffsets": "387"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Matthew\\.gradle\\caches\\transforms-2\\files-2.1\\5c7ecdebcec4a6f24a7f98b97315f2e5\\jetified-material-datepicker-1.3\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2,3,6,9",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,153,286,405",
+                        "endLines": "2,5,8,11",
+                        "endColumns": "97,12,12,12",
+                        "endOffsets": "148,281,400,517"
+                    },
+                    "to": {
+                        "startLines": "3,8,11,14",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "121,392,525,644",
+                        "endLines": "3,10,13,16",
+                        "endColumns": "97,12,12,12",
+                        "endOffsets": "214,520,639,756"
                     }
                 }
             ]
