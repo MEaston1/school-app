@@ -220,6 +220,10 @@
         "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\drawable\\ic_person_add.xml"
     },
     {
+        "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_teachers.xml.flat",
+        "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\layout\\activity_teachers.xml"
+    },
+    {
         "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\menu_detail_page_menu.xml.flat",
         "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\menu\\detail_page_menu.xml"
     },
@@ -250,6 +254,10 @@
     {
         "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\drawable_graduation_cap.png.flat",
         "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\drawable\\graduation_cap.png"
+    },
+    {
+        "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_school_black_24dp.xml.flat",
+        "source": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\src\\main\\res\\drawable\\ic_school_black_24dp.xml"
     },
     {
         "merged": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\res\\merged\\debug\\drawable_letter.png.flat",

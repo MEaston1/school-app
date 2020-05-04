@@ -1235,6 +1235,7 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_person_add
 drawable ic_person_add_black_24dp
+drawable ic_school_black_24dp
 drawable ic_signout
 drawable image_not_found
 drawable letter
@@ -1344,6 +1345,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id addAnnouncementsCard
 id adjust_height
 id adjust_width
 id alertTitle
@@ -1535,6 +1537,7 @@ id nav_home
 id nav_logout
 id nav_medical_form
 id nav_messages
+id nav_teachers
 id nav_view
 id navigation_header_container
 id never
@@ -1631,6 +1634,7 @@ id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id tagsTV
 id tagsTxt
+id teacherstitle_textview_teachers
 id text
 id text2
 id textSpacerNoButtons
@@ -1669,7 +1673,10 @@ id username_edittext_register
 id username_message_row
 id username_textview_new_message
 id vertical
+id viewAbsenceCard
 id viewAllMenuItem
+id viewConsentCard
+id viewMedicalCard
 id view_offset_helper
 id viewpump_layout_res
 id viewpump_tag_id
@@ -1743,6 +1750,7 @@ layout activity_more_layout
 layout activity_new_message
 layout activity_register
 layout activity_splash
+layout activity_teachers
 layout activity_upload
 layout amdp_date_picker_dialog
 layout amdp_date_picker_header_view
@@ -1911,6 +1919,7 @@ string ex_msg_dialog_choice_confirm
 string ex_msg_dialog_view_not_set
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string fcm_fallback_notification_channel_label
 string firebase_database_url
 string gcm_defaultSenderId
 string google_api_key

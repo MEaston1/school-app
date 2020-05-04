@@ -1265,6 +1265,7 @@
     <string name="ex_msg_dialog_view_not_set">You must call method setView before calling configureView.</string>
     <string name="fab_transformation_scrim_behavior" translatable="false">com.google.android.material.transformation.FabTransformationScrimBehavior</string>
     <string name="fab_transformation_sheet_behavior" translatable="false">com.google.android.material.transformation.FabTransformationSheetBehavior</string>
+    <string name="fcm_fallback_notification_channel_label">Miscellaneous</string>
     <string name="firebase_database_url" translatable="false">https://school-app-50862.firebaseio.com</string>
     <string name="gcm_defaultSenderId" translatable="false">1074731583534</string>
     <string name="google_api_key" translatable="false">AIzaSyDCtJ0c6sxhXjT8SrnpNQ35ozE06DVF8Nw</string>

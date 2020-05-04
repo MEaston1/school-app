@@ -10,10 +10,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.ui.activities.SplashActivity"
+        <activity android:name=".view.ui.activities.TeachersActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".view.ui.activities.SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -23,23 +30,21 @@
             android:label="MyFeaturesList" />
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".view.ui.activities.ListingActivity"
             android:label="Announcements"
-            android:parentActivityName="MainActivity" />
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".view.ui.activities.UploadActivity"
-            android:theme="@style/CRUDTheme"
             android:label="Editor"
-            android:parentActivityName="MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/CRUDTheme" />
         <activity android:name=".messages.NewMessageActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".messages.LatestMessagesActivity" />
         </activity>
-
         <activity android:name=".messages.ChatLogActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -47,7 +52,7 @@
         </activity>
         <activity
             android:name=".view.ui.activities.DetailActivity"
-            android:label="News Reader "
+            android:label="Announcements Reader "
             android:parentActivityName=".view.ui.activities.ListingActivity" />
         <activity android:name=".messages.LatestMessagesActivity">
             <meta-data

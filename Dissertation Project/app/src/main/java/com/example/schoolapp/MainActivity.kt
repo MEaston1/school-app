@@ -1,9 +1,7 @@
 package com.example.schoolapp
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
 import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.TextView
@@ -12,9 +10,14 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import com.example.schoolapp.common.CacheManager
+import com.example.schoolapp.common.Utils.openActivity
 import com.example.schoolapp.messages.LatestMessagesActivity
 import com.example.schoolapp.models.User
 import com.example.schoolapp.registerlogin.RegisterActivity
+import com.example.schoolapp.view.ui.activities.ListingActivity
+import com.example.schoolapp.view.ui.activities.TeachersActivity
+import com.example.schoolapp.view.ui.base.BaseActivity
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -22,7 +25,7 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.*
 
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     lateinit var ref: DatabaseReference
     lateinit var toolbar: Toolbar
@@ -92,13 +95,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 startActivity(Intent(this, LatestMessagesActivity::class.java))
             }
             R.id.nav_announcements -> {
-                Toast.makeText(this, "Friends clicked", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "announcements selected", Toast.LENGTH_SHORT).show()
+                openActivity(this, ListingActivity::class.java)
             }
             R.id.nav_about -> {
-                Toast.makeText(this, "Update clicked", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "About selected", Toast.LENGTH_SHORT).show()
             }
             R.id.nav_consent_forms -> {
-                Toast.makeText(this, "Update clicked", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Consent Forms Selected", Toast.LENGTH_SHORT).show()
             }
             R.id.nav_medical_form -> {
                 Toast.makeText(this, "Update clicked", Toast.LENGTH_SHORT).show()
@@ -109,8 +113,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_calendar -> {
                 Toast.makeText(this, "Update clicked", Toast.LENGTH_SHORT).show()
             }
+            R.id.nav_teachers -> {
+                Toast.makeText(this, "Teachers Section Selected", Toast.LENGTH_SHORT).show()
+                openActivity(this, TeachersActivity::class.java)
+            }
             R.id.nav_logout -> {
                 Toast.makeText(this, "Sign out clicked", Toast.LENGTH_SHORT).show()
+                CacheManager.CURRENT_USER=""
                 FirebaseAuth.getInstance().signOut()
                 val intent = Intent(this, RegisterActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
