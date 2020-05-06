@@ -28,8 +28,7 @@ import com.example.schoolapp.view.ui.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_listings.*
 import java.util.*
 
-class ListingActivity : BaseActivity(), SearchView.OnQueryTextListener,
-    MenuItem.OnActionExpandListener {
+class ListingActivity : BaseActivity(), SearchView.OnQueryTextListener, MenuItem.OnActionExpandListener {
     private lateinit var adapter: EasyAdapter<News, ModelBinding>
 
     //We define our instance fields
@@ -74,7 +73,7 @@ class ListingActivity : BaseActivity(), SearchView.OnQueryTextListener,
                         .into(binding.mImageView)
                 }
                 binding.contentCard.setOnClickListener {
-                    Utils.sendPlanetToActivity(a, n, DetailActivity::class.java)
+                    Utils.sendAnnouncementToActivity(a, n, DetailActivity::class.java)
                 }
 
                 binding.mViewsTV.text = n.views
@@ -128,7 +127,7 @@ class ListingActivity : BaseActivity(), SearchView.OnQueryTextListener,
                 MEM_CACHE = r.news as ArrayList<News>
                 if (mNews.isNotEmpty()) {
                     createStateCard(
-                        "Successfully Fetched News",
+                        "Successfully Fetched Announcements",
                         mNews.size.toString() + " News Found",
                         isShowing = true,
                         isLoading = false,

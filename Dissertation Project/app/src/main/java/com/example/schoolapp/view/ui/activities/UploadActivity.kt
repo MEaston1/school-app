@@ -39,9 +39,7 @@ class UploadActivity : BaseEditingActivity() {
     private var resumedAfterImagePicker = false
     private var chosenFile: File? = null
 
-    /**
-     * Capture or select image
-     */
+    // Capture or select image
     private fun captureImage() {
         val i = Intent(this, ImageSelectActivity::class.java)
         i.putExtra(ImageSelectActivity.FLAG_COMPRESS, false) //default is true
@@ -50,9 +48,9 @@ class UploadActivity : BaseEditingActivity() {
         startActivityForResult(i, 1213)
     }
 
-    /**
-     * After capturing or selecting image, we will get the image path
-     * and use it to instantiate a file object
+    /*
+      After capturing or selecting image, we will get the image path
+      and use it to instantiate a file object
      */
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -66,9 +64,8 @@ class UploadActivity : BaseEditingActivity() {
         }
         resumedAfterImagePicker = true
     }
-    /**
-     * Lets handle events and Show our single choice dialogs
-     */
+    // Lets handles events and Shows single choice dialogs
+
     private fun handleEvents() {
         countryTxt.setOnClickListener {
             selectCountry(countryTxt)

@@ -8,6 +8,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.squareup.picasso.Picasso
 import com.yarolegovich.lovelydialog.LovelyStandardDialog
 import com.example.schoolapp.R
+import com.example.schoolapp.data.model.entity.Absence
+import com.example.schoolapp.data.model.entity.Consent
+import com.example.schoolapp.data.model.entity.Medical
 import com.example.schoolapp.data.model.entity.News
 import com.example.schoolapp.registerlogin.LoginActivity
 import java.text.SimpleDateFormat
@@ -17,7 +20,8 @@ import kotlin.collections.ArrayList
 object Utils {
     @JvmField
     var MEM_CACHE: ArrayList<News> = ArrayList()
-
+    var A_MEM_CACHE: ArrayList<Absence> = ArrayList()
+    var C_MEM_CACHE: ArrayList<Consent> = ArrayList()
     @JvmField
     var SEARCH_STRING = ""
 
@@ -81,14 +85,32 @@ object Utils {
      * @param clazz - Target activity
      */
     @JvmStatic
-    fun sendPlanetToActivity(c: Context, news: News?, clazz: Class<*>?) {
+    fun sendAnnouncementToActivity(c: Context, news: News?, clazz: Class<*>?) {
         val i = Intent(c, clazz)
-        i.putExtra("PLANET_KEY", news)
+        i.putExtra("ANNOUNCEMENTS_KEY", news)
+        c.startActivity(i)
+    }
+    @JvmStatic
+    fun sendMedicalAnnouncementToActivity(c: Context,   medical: Medical?, clazz: Class<*>?) {
+        val i = Intent(c, clazz)
+        i.putExtra("ANNOUNCEMENTS_KEY", medical)
+        c.startActivity(i)
+    }
+    @JvmStatic
+    fun sendAbsenceAnnouncementToActivity(c: Context, absence: Absence?, clazz: Class<*>?) {
+        val i = Intent(c, clazz)
+        i.putExtra("ANNOUNCEMENTS_KEY", absence)
+        c.startActivity(i)
+    }
+    @JvmStatic
+    fun sendConsentAnnouncementToActivity(c: Context, consent: Consent?, clazz: Class<*>?) {
+        val i = Intent(c, clazz)
+        i.putExtra("ANNOUNCEMENTS_KEY", consent)
         c.startActivity(i)
     }
 
     /**
-     * Receive the sent planet
+     * Receive the sent announcement
      * @param intent
      * @param c
      * @return
@@ -96,7 +118,7 @@ object Utils {
     @JvmStatic
     fun receive(intent: Intent, c: Context?): News? {
         try {
-            return intent.getSerializableExtra("PLANET_KEY") as News
+            return intent.getSerializableExtra("ANNOUNCEMENTS_KEY") as News
         } catch (e: Exception) {
             e.printStackTrace()
         }
@@ -131,12 +153,30 @@ object Utils {
         })
         return imageURLs
     }
+    @JvmStatic
+    fun getAbsenceImageURLs(absence: List<Absence>): Array<String?> {
+        val absenceimageURLs = arrayOfNulls<String>(absence.size)
+        absence.withIndex().forEach({ (i, planet) ->
+            absenceimageURLs[i] = planet.imageURL
+        })
+        return absenceimageURLs
+    }
 
     @JvmStatic
     fun filter(query: String, news: List<News>): ArrayList<News> {
         val hits = ArrayList<News>()
         for (n in news) {
             if (n.title!!.toLowerCase(Locale.getDefault()).contains(query.toLowerCase(Locale.getDefault()))) {
+                hits.add(n)
+            }
+        }
+        return hits
+    }
+    @JvmStatic
+    fun filterAbsences(query: String, absence: List<Absence>): ArrayList<Absence> {
+        val hits = ArrayList<Absence>()
+        for (n in absence) {
+            if (n.childName!!.toLowerCase(Locale.getDefault()).contains(query.toLowerCase(Locale.getDefault()))) {
                 hits.add(n)
             }
         }
@@ -171,9 +211,54 @@ object Utils {
         }
         return recent
     }
+
+    @JvmStatic
+    fun get5MostRecentAbsences(news: ArrayList<Absence>): ArrayList<Absence> {
+        val recent = ArrayList<Absence>()
+        if (news.isNullOrEmpty()) {
+            return recent
+        }
+
+        if (news.size >= 5) {
+            var i = 0
+            for (n in news.asReversed()) {
+                if(i >= 5) {
+                    break
+                }
+                recent.add(n)
+                i++
+            }
+        }else{
+            return news
+        }
+        return recent
+    }
     @JvmStatic
     fun subtractList(initialList: ArrayList<News>, toBeRemoved: ArrayList<News>): ArrayList<News> {
         val result = ArrayList<News>()
+
+        if (initialList.isNullOrEmpty()){
+            return result
+        }
+        if (toBeRemoved.isNullOrEmpty()){
+            return initialList
+        }
+        for (n in initialList){
+            var hit = false
+            for (n1 in toBeRemoved){
+                if (n.key.equals(n1.key,true)){
+                    hit = true
+                }
+            }
+            if (!hit){
+                result.add(n)
+            }
+        }
+        return result
+    }
+    @JvmStatic
+    fun subtractListAbsence(initialList: ArrayList<Absence>, toBeRemoved: ArrayList<Absence>): ArrayList<Absence> {
+        val result = ArrayList<Absence>()
 
         if (initialList.isNullOrEmpty()){
             return result

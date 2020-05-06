@@ -3,10 +3,10 @@ package com.example.schoolapp.data.model.entity
 import com.google.firebase.database.Exclude
 import java.io.Serializable
 
-/**
- * Our News Class. It's roles are:
- * 1. Define the properties of our News item.
- * 2. Assign Default News values using the elvis operator
+/*
+  This is the News Class for the teacher announcements. It's roles are:
+  1. Define the properties of our News item.
+  2. Assign Default News values using the elvis operator
  */
 class News : Serializable {
     var title: String? = ""

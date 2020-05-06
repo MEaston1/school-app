@@ -8,15 +8,14 @@ object Constants {
     //The following line points us to the location of our database
     @JvmField
     val DB = FirebaseDatabase.getInstance()
-        .getReference("corona_virus_news_db")
+        .getReference("teacher_announcements")
     //The following points us to where our images will be stored
     @JvmField
     val IMAGES_DB = FirebaseStorage.getInstance()
-        .getReference("corona_virus_images_db")
+        .getReference("teacher_announcements")
 
     val ADMIN_EMAIL = "clarkkent@gmail.com"
     val EDITOR_1_EMAIL = "johndoe@gmail.com"
-    val EDITOR_2_EMAIL = "jamesweb@gmail.com"
 
     //Different states of our requests
     const val FAILED = -1

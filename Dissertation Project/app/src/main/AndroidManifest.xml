@@ -10,6 +10,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".view.ui.activities.AbsenceDetailActivity"></activity>
+        <activity android:name=".view.ui.activities.AbsenceListingActivity" />
+        <activity android:name=".view.ui.activities.ConsentListingActivity" />
+        <activity android:name=".view.ui.activities.MedicalListingActivity" />
         <activity android:name=".view.ui.activities.TeachersActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -30,7 +34,7 @@
             android:label="MyFeaturesList" />
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".view.ui.activities.ListingActivity"
             android:label="Announcements"

@@ -1,10 +1,10 @@
 package com.example.schoolapp.data.model.process
 
+
 import com.example.schoolapp.data.model.entity.News
 
-/**
- * This class will represent a single request or Firebase operation
- */
+// This class contains a request for firebase operations
+
 class RequestCall {
     //A single request will have the following attributes
     var status = 0

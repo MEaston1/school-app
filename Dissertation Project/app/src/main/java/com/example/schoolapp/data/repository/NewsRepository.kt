@@ -55,7 +55,7 @@ class NewsRepository {
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
-                Log.d("CAMPOSHA", databaseError.message)
+                Log.d("PARENT CONNECT", databaseError.message)
                 r.status = FAILED
                 r.message = databaseError.message
                 mLiveData.postValue(r)

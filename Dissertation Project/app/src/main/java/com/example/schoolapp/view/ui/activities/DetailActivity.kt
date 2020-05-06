@@ -9,7 +9,7 @@ import com.example.schoolapp.common.PermissionManager
 import com.example.schoolapp.common.Utils
 import com.example.schoolapp.common.Utils.loadImageFromNetwork
 import com.example.schoolapp.common.Utils.receive
-import com.example.schoolapp.common.Utils.sendPlanetToActivity
+import com.example.schoolapp.common.Utils.sendAnnouncementToActivity
 import com.example.schoolapp.data.model.entity.News
 import com.example.schoolapp.view.ui.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_detail.*
@@ -48,7 +48,7 @@ class DetailActivity : BaseActivity() {
 
         editFAB.setOnClickListener {
             if (PermissionManager.isLoggedIn){
-                sendPlanetToActivity(this, receivedNews, UploadActivity::class.java)
+                sendAnnouncementToActivity(this, receivedNews, UploadActivity::class.java)
                 finish()
             }else{
                 Utils.promptLogin(this, "INSUFFICIENT PRIVILEGES", "You need to Login First")
@@ -69,7 +69,7 @@ class DetailActivity : BaseActivity() {
         when (item.itemId) {
             R.id.action_edit -> {
                 if (PermissionManager.isLoggedIn){
-                    sendPlanetToActivity(this, receivedNews, UploadActivity::class.java)
+                    sendAnnouncementToActivity(this, receivedNews, UploadActivity::class.java)
                     finish()
                 }else{
                     Utils.promptLogin(this, "INSUFFICIENT PRIVILEGES", "You need to Login First")
