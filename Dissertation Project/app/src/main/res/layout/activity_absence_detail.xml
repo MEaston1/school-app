@@ -82,11 +82,11 @@
                     android:layout_weight="0.5"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
-                    android:text="COUNTRY"
+                    android:text="Expected Absence Duration"
                     android:textColor="@color/Black" />
 
                 <TextView
-                    android:id="@+id/countryTV"
+                    android:id="@+id/absenceDurationTV"
                     android:layout_width="0dp"
                     android:layout_weight="0.5"
                     android:layout_height="wrap_content"
@@ -104,7 +104,7 @@
                     android:layout_weight="0.5"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
-                    android:text="TAGS"
+                    android:text="Expected Duration"
                     android:textColor="@color/Black" />
 
                 <TextView

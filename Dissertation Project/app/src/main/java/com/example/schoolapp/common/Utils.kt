@@ -93,19 +93,19 @@ object Utils {
     @JvmStatic
     fun sendMedicalAnnouncementToActivity(c: Context,   medical: Medical?, clazz: Class<*>?) {
         val i = Intent(c, clazz)
-        i.putExtra("ANNOUNCEMENTS_KEY", medical)
+        i.putExtra("MEDICAL_KEY", medical)
         c.startActivity(i)
     }
     @JvmStatic
     fun sendAbsenceAnnouncementToActivity(c: Context, absence: Absence?, clazz: Class<*>?) {
         val i = Intent(c, clazz)
-        i.putExtra("ANNOUNCEMENTS_KEY", absence)
+        i.putExtra("ABSENCE_KEY", absence)
         c.startActivity(i)
     }
     @JvmStatic
     fun sendConsentAnnouncementToActivity(c: Context, consent: Consent?, clazz: Class<*>?) {
         val i = Intent(c, clazz)
-        i.putExtra("ANNOUNCEMENTS_KEY", consent)
+        i.putExtra("CONSENT_KEY", consent)
         c.startActivity(i)
     }
 
@@ -124,6 +124,16 @@ object Utils {
         }
         return null
     }
+    @JvmStatic
+    fun receiveAbsence(intent: Intent, c: Context?): Absence? {
+        try {
+            return intent.getSerializableExtra("ABSENCE_KEY") as Absence
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+        return null
+    }
+
 
     /**
      * Load image from online using Picasso

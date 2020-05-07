@@ -6,7 +6,8 @@ import java.io.Serializable
 class Absence: Serializable {
     var childName: String? = ""
     var absenceReason: String? = ""
-    var numberOfDaysExpected: String? = ""
+    var durationExpected: String? = ""
+    var dateUpdated: String? = ""
     var datePublished: String? = ""
     var views: String? = "0"
     var publisher: String? = ""
