@@ -1,9 +1,220 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.ui.activities.AboutActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/mCollapsingToolbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleMarginEnd="8dp"
+            app:expandedTitleMarginStart="4dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/CapImageView"
+                android:layout_width="422dp"
+                android:layout_height="100dp"
+                android:padding="20dp"
+                app:srcCompat="@drawable/graduation_cap" />
+
+            <TextView
+                android:id="@+id/titleAbsenceTV"
+                fontPath="fonts/chalkboard.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="About Parent Connect"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textColor="@color/Black"
+                android:textStyle="italic"
+                tools:ignore="MissingPrefix" />
+
+            <TextView
+                android:id="@+id/aboutContentFirstTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/Black"
+                android:text="The Parent Connect App is an app which focuses on enhancing communication between teachers, parents and other members of school staff. This is achieved through a combination of different communication methods which can be used to address moments that require:  " />
+            <TextView
+                android:id="@+id/aboutPointOneTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/Black"
+                android:text="► Professional" />
+            <TextView
+                android:id="@+id/aboutPointTwoTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/Black"
+                android:text="► Casual" />
+            <TextView
+                android:id="@+id/aboutPointThreeTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/Black"
+                android:text="► One-To-One" />
+            <TextView
+                android:id="@+id/aboutPointFourTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/Black"
+                android:text="► One-To-Many" />
+            <TextView
+                android:id="@+id/aboutContentTwoTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/Black"
+                android:text="In Addition to multiple forms of communication Parent Connect also offers organisation tools where users are able to send various documents to the school:" />
+
+            <TextView
+                android:id="@+id/aboutPointFiveTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="► Consent Forms"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/Black" />
+
+            <TextView
+                android:id="@+id/aboutPointSixTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/Black"
+                android:text="► Medical Forms" />
+            <TextView
+                android:id="@+id/aboutPointSevenTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/Black"
+                android:text="► Absence Notices" />
+            <TextView
+                android:id="@+id/aboutPointEightTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/Black"
+                android:text="once submitted a form can be viewed by teachers in the teacher section of the app. Images can also be uploaded for every form. " />
+            <View
+                android:background="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"/>
+            <TextView
+                android:id="@+id/titleFAQSTV"
+                fontPath="fonts/chalkboard.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="FAQ's"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textColor="@color/Black"
+                android:textStyle="italic"
+                tools:ignore="MissingPrefix" />
+            <TextView
+                android:id="@+id/aboutPointNineTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/Black"
+                android:text="► Can i talk to other parents on this app as well as just teachers?" />
+            <TextView
+                android:id="@+id/aboutContentThreeTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/Black"
+                android:text="The Messages section of Parent Connect was made with all users in mind in order for Parent-Teacher Associations to be able to use the app. So you can message anyone who has an account." />
+            <TextView
+                android:id="@+id/aboutPointTenTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/Black"
+                android:text="► How am in informed when someone important is going on?" />
+            <TextView
+                android:id="@+id/aboutContentFourTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/Black"
+                android:text="When a school member of staff has something important to tell a large group of parents an announcement will be posted to the announcements section. Each announcement will trigger a notification on your device which can be turned off in your device settings." />
+            <TextView
+                android:id="@+id/aboutPointElevenTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/Black"
+                android:text="► Will i get a notification for every message that is sent my way?" />
+            <TextView
+                android:id="@+id/aboutContentFiveTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/Black"
+                android:text="Notifications have not been enabled for the direct messaging system for privacy reasons. This is because our aim for Parent Connect was not to replace mainstream social media platforms. Most parents and teachers would not want to be bombarded with dozens of messages from others not close to them. This is why the announcements section was made to separate important communications from more casual ones." />
+            <TextView
+                android:id="@+id/aboutPointTwelveTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/Black"
+                android:text="► Can i edit a document once i have submitted it?" />
+            <TextView
+                android:id="@+id/aboutContentSixTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/Black"
+                android:text="Only teachers have the access permissions to view and edit all types of forms in order to ensure privacy. If as a parent you forgot to fill in an important part of a document the app will prompt you when you try to submit it, otherwise message your child's teacher to get them to edit it for you." />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
