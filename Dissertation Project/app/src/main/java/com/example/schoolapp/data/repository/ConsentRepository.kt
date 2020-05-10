@@ -13,9 +13,9 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.StorageTask
 import com.google.firebase.storage.UploadTask
-import com.example.schoolapp.common.Constants.DB
+import com.example.schoolapp.common.Constants.CONSENT_DB
 import com.example.schoolapp.common.Constants.FAILED
-import com.example.schoolapp.common.Constants.IMAGES_DB
+import com.example.schoolapp.common.Constants.CONSENT_IMAGES_DB
 import com.example.schoolapp.common.Constants.IN_PROGRESS
 import com.example.schoolapp.common.Constants.SUCCEEDED
 import com.example.schoolapp.common.Utils.C_MEM_CACHE
@@ -32,7 +32,7 @@ class ConsentRepository {
         r.status = IN_PROGRESS
         r.message = "Fetching Consent Forms Please Wait.."
         mLiveData.value = r
-        DB.addValueEventListener(object : ValueEventListener {
+        CONSENT_DB.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 C_MEM_CACHE.clear()
                 if (dataSnapshot.exists() && dataSnapshot.childrenCount > 0) {
@@ -74,9 +74,9 @@ class ConsentRepository {
             //push data to FirebaseDatabase. Table or Child called Consent will be created.
             try{
                 if (consent.key.isNullOrEmpty()){
-                    DB.push().setValue(consent);
+                    CONSENT_DB.push().setValue(consent);
                 }else{
-                    DB.child(consent.key!!).setValue(consent)
+                    CONSENT_DB.child(consent.key!!).setValue(consent)
                 }
                 r.status = SUCCEEDED
                 r.message = "Congrats!. Successfully Saved."
@@ -89,6 +89,51 @@ class ConsentRepository {
             mutableLiveData
         }
     }
+    fun updateImageText(consent: Consent, mImageUri: Uri): MutableLiveData<ConsentRequestCall> {
+        mutableLiveData = MutableLiveData()
+        val r = ConsentRequestCall()
+        r.status = IN_PROGRESS
+        r.message = "Performing Validation"
+        mutableLiveData.value = r
+        return (run {
+            if (mUploadTask != null && mUploadTask!!.isInProgress) {
+                r.status = IN_PROGRESS
+                r.message = "An Upload is already in Progress.Please be patient"
+                mutableLiveData.postValue(r)
+                return mutableLiveData as MutableLiveData<ConsentRequestCall>
+            }
+            r.status = IN_PROGRESS
+            r.message = "Now Uploading Image...Please wait.."
+            mutableLiveData.postValue(r)
+            val imageRef: StorageReference = CONSENT_IMAGES_DB.child(mImageUri.lastPathSegment!!)
+            mUploadTask = imageRef.putFile(mImageUri)
+            (mUploadTask as UploadTask).continueWithTask(
+                (Continuation { task: Task<UploadTask.TaskSnapshot?> ->
+                    if (!task.isSuccessful) {
+                        r.status = IN_PROGRESS
+                        r.message = "ERROR ENCOUNTERED: " + task.exception!!.message
+                    }
+                    imageRef.downloadUrl
+                } as Continuation<UploadTask.TaskSnapshot?, Task<Uri>>)
+            )
+                .addOnCompleteListener { task: Task<Uri?> ->
+                    if (task.isSuccessful) {
+                        val downloadUri = task.result
+                        val url = downloadUri.toString()
+                        consent.consentImageURL = url
+                        r.status = IN_PROGRESS
+                        r.message = "Image Upload successful. We are now saving text details"
+                    } else {
+                        r.status = FAILED
+                        r.message =
+                            "Unfortunately Image Could not be uploaded: FULL DETAILS: " + task.exception!!.message
+                    }
+                    mutableLiveData.postValue(r)
+                    mutableLiveData = updateOnlyText(consent, mutableLiveData)
+                }
+            mutableLiveData
+        })
+    }
     private fun uploadOnlyText(consent: Consent): MutableLiveData<ConsentRequestCall> {
         val r = ConsentRequestCall()
         r.status = IN_PROGRESS
@@ -96,21 +141,21 @@ class ConsentRepository {
         mutableLiveData.value = r
         return run {
             r.status = IN_PROGRESS
-            r.message = "Inserting Absence Reports...Please wait.."
+            r.message = "Inserting Consent Forms...Please wait.."
             mutableLiveData.postValue(r)
             //push data to FirebaseDatabase. Table or Child called Consent will be created.
-            DB.push().setValue(consent)
+            CONSENT_DB.push().setValue(consent)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
                         r.status = SUCCEEDED
-                        if (consent.imageURL != null && consent.imageURL!!.isNotEmpty()) {
+                        if (consent.consentImageURL != null && consent.consentImageURL!!.isNotEmpty()) {
                             r.message = "Congrats! Both Text and Image Inserted Successfully"
                         } else {
                             r.message = "Text Successfully Saved."
                         }
                     } else {
                         r.status = FAILED
-                        if (consent.imageURL != null && consent.imageURL!!.isNotEmpty()) {
+                        if (consent.consentImageURL != null && consent.consentImageURL!!.isNotEmpty()) {
                             r.message =
                                 "Unfortunaletly Text Was Not Inserted. However Image was uploaded. ERROR: " + task.exception!!.message
                         } else {
@@ -139,7 +184,7 @@ class ConsentRepository {
             r.status = IN_PROGRESS
             r.message = "Now Uploading Image...Please wait.."
             mutableLiveData.postValue(r)
-            val imageRef: StorageReference = IMAGES_DB.child(mImageUri.lastPathSegment!!)
+            val imageRef: StorageReference = CONSENT_IMAGES_DB.child(mImageUri.lastPathSegment!!)
             mUploadTask = imageRef.putFile(mImageUri)
             (mUploadTask as UploadTask).continueWithTask(
                 (Continuation { task: Task<UploadTask.TaskSnapshot?> ->
@@ -158,7 +203,7 @@ class ConsentRepository {
                             val url =
                                 Objects.requireNonNull(downloadUri)
                                     .toString()
-                            consent.imageURL = url
+                            consent.consentImageURL = url
                             r.status =
                                 IN_PROGRESS
                             r.message =
@@ -181,6 +226,41 @@ class ConsentRepository {
             mutableLiveData
         })
     }
+    private fun updateOnlyText(consent: Consent, mLiveData: MutableLiveData<ConsentRequestCall>): MutableLiveData<ConsentRequestCall> {
+        val r = ConsentRequestCall()
+        r.status = IN_PROGRESS
+        r.message = "Starting Update.."
+        mLiveData.value = r
+        return run {
+            r.status = IN_PROGRESS
+            r.message = "Updating News...Please wait.."
+            mLiveData.postValue(r)
+            val finalLiveData: MutableLiveData<ConsentRequestCall> = mLiveData
+            CONSENT_DB.child(consent.key!!).setValue(consent)
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        r.status = SUCCEEDED
+                        if (consent.consentImageURL != null && consent.consentImageURL!!.isNotEmpty()) {
+                            r.message = "Congrats! Both Text and Image Updated Successfully"
+                        } else {
+                            r.message =
+                                "Text Successfully Updated. However Image was not Uploaded."
+                        }
+                    } else {
+                        r.status = FAILED
+                        if (consent.consentImageURL != null && consent.consentImageURL!!.isNotEmpty()) {
+                            r.message =
+                                "Unfortunaletly Text Was Not Updated. However Image was uploaded. ERROR: " + task.exception!!.message
+                        } else {
+                            r.message =
+                                "Unfortunaletly! Both Text and Image Were Not Updated: " + task.exception!!.message
+                        }
+                    }
+                    finalLiveData.postValue(r)
+                }
+            finalLiveData
+        }
+    }
     fun deleteImageText(selectedConsent: Consent): MutableLiveData<ConsentRequestCall> {
         mutableLiveData = MutableLiveData()
         val r = ConsentRequestCall()
@@ -189,16 +269,16 @@ class ConsentRepository {
         mutableLiveData.value = r
         return run {
             r.status = IN_PROGRESS
-            r.message = "Deleting News...Please wait.."
+            r.message = "Deleting Consent Form...Please wait.."
             mutableLiveData.postValue(r)
             val selectedStarKey = selectedConsent.key
-            DB.child(selectedStarKey!!).removeValue()
+            CONSENT_DB.child(selectedStarKey!!).removeValue()
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
                         r.status = IN_PROGRESS
                         r.message =
-                            selectedConsent.childName + " text REMOVED DELETED SUCCESSFULLY..Now deleting image"
-                        mutableLiveData = deleteOnlyImage(selectedConsent.imageURL!!, true)
+                            selectedConsent.consentChildName + " text REMOVED DELETED SUCCESSFULLY..Now deleting image"
+                        mutableLiveData = deleteOnlyImage(selectedConsent.consentImageURL!!, true)
                     } else {
                         r.status = FAILED
                         r.message = "UNSUCCESSFUL: " + task.exception!!.message
@@ -258,7 +338,7 @@ class ConsentRepository {
         val mLiveData = MutableLiveData<ConsentRequestCall>()
         val r = ConsentRequestCall()
         r.status = IN_PROGRESS
-        r.message = "Fetching News Please Wait.."
+        r.message = "Fetching Consent Form Please Wait.."
         mLiveData.value = r
         if (searchTerm.isNotEmpty()) {
             val letters = searchTerm.toCharArray()
@@ -267,14 +347,14 @@ class ConsentRepository {
             searchTerm = firstLetter + remainingLetters
         }
         val firebaseSearchQuery: Query =
-            DB.orderByChild("name").startAt(searchTerm)
+            CONSENT_DB.orderByChild("name").startAt(searchTerm)
                 .endAt(searchTerm + "\uf8ff")
         val tempSearchTerm = searchTerm
         firebaseSearchQuery.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 C_MEM_CACHE.clear()
                 if (dataSnapshot.exists() && dataSnapshot.childrenCount > 0) {
-                    for (ds in dataSnapshot.children) { //Now get Absence Objects and populate our arraylist.
+                    for (ds in dataSnapshot.children) { //Now get Consent Objects and populate our arraylist.
                         val consent = ds.getValue(Consent::class.java)!!
                         consent.key = ds.key
                         C_MEM_CACHE.add(consent)

@@ -15,8 +15,7 @@ import com.example.schoolapp.common.Utils.openActivity
 import com.example.schoolapp.messages.LatestMessagesActivity
 import com.example.schoolapp.models.User
 import com.example.schoolapp.registerlogin.RegisterActivity
-import com.example.schoolapp.view.ui.activities.ListingActivity
-import com.example.schoolapp.view.ui.activities.TeachersActivity
+import com.example.schoolapp.view.ui.activities.*
 import com.example.schoolapp.view.ui.base.BaseActivity
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
@@ -99,19 +98,19 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
                 openActivity(this, ListingActivity::class.java)
             }
             R.id.nav_about -> {
-                Toast.makeText(this, "About selected", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, AboutActivity::class.java))
             }
             R.id.nav_consent_forms -> {
-                Toast.makeText(this, "Consent Forms Selected", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, ConsentUploadActivity::class.java))
             }
             R.id.nav_medical_form -> {
-                Toast.makeText(this, "Update clicked", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, MedicalUploadActivity::class.java))
             }
             R.id.nav_absence -> {
-                Toast.makeText(this, "Update clicked", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, AbsenceUploadActivity::class.java))
             }
             R.id.nav_calendar -> {
-                Toast.makeText(this, "Update clicked", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Feature Not Yet Implemented", Toast.LENGTH_SHORT).show()
             }
             R.id.nav_teachers -> {
                 Toast.makeText(this, "Teachers Section Selected", Toast.LENGTH_SHORT).show()

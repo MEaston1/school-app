@@ -1,6 +1,5 @@
 package com.example.schoolapp.view.ui.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.graphics.Color
 import android.os.Bundle
 import android.text.Spannable
@@ -23,7 +22,6 @@ import com.example.schoolapp.common.Utils.getAbsenceImageURLs
 import com.example.schoolapp.data.model.entity.Absence
 import com.example.schoolapp.databinding.ModelBinding
 import com.example.schoolapp.view.ui.base.BaseActivity
-import com.example.schoolapp.viewmodel.AbsenceViewModel
 import kotlinx.android.synthetic.main.activity_absence_listing.*
 import java.util.*
 
@@ -63,13 +61,13 @@ class AbsenceListingActivity : BaseActivity(), SearchView.OnQueryTextListener, M
                 binding.mTitleTV.text = n.childName
                 binding.mContentTV.text = n.absenceReason
 
-                if (!n.imageURL.isNullOrEmpty()) {
-                    Picasso.get().load(n.imageURL)
+                if (!n.absenceImageURL.isNullOrEmpty()) {
+                    Picasso.get().load(n.absenceImageURL)
                         .placeholder(R.drawable.load_dots).error(R.drawable.image_not_found)
                         .into(binding.mImageView)
                 }
                 binding.contentCard.setOnClickListener {
-                    Utils.sendAbsenceAnnouncementToActivity(a, n, DetailActivity::class.java)
+                    Utils.sendAbsenceAnnouncementToActivity(a, n, AbsenceDetailActivity::class.java)
                 }
 
                 binding.mViewsTV.text = n.views
@@ -115,14 +113,14 @@ class AbsenceListingActivity : BaseActivity(), SearchView.OnQueryTextListener, M
     }
 
     private fun bindData() {
-        AbsenceViewModel().allAbsence.observe(this, Observer { r ->
+        absenceViewModel().allAbsence.observe(this, Observer { r ->
             if (makeAbsenceRequest(r, "DOWNLOAD") == SUCCEEDED) {
                 val mAbsence = r.absence
                 A_MEM_CACHE = r.absence as ArrayList<Absence>
                 if (mAbsence.isNotEmpty()) {
                     createStateCard(
-                        "Successfully Fetched Absences",
-                        mAbsence.size.toString() + " absence forms Found",
+                        "Successfully Fetched Announcements",
+                        mAbsence.size.toString() + " News Found",
                         isShowing = true,
                         isLoading = false,
                         STATE = SUCCEEDED
@@ -133,7 +131,7 @@ class AbsenceListingActivity : BaseActivity(), SearchView.OnQueryTextListener, M
                 } else {
                     createStateCard(
                         "Successfully Connected",
-                        "However No Absences were Found in Database",
+                        "However No News was Found in Database",
                         true,
                         false,
                         SUCCEEDED
@@ -145,7 +143,7 @@ class AbsenceListingActivity : BaseActivity(), SearchView.OnQueryTextListener, M
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.action_new) {
-                Utils.openActivity(this, UploadActivity::class.java)
+                Utils.openActivity(this, AbsenceUploadActivity::class.java)
                 finish()
             return true
         }

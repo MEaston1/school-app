@@ -29,6 +29,26 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.example.schoolapp.view.ui.activities.AboutActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name="com.example.schoolapp.view.ui.activities.ConsentUploadActivity"
+            android:label="@string/title_activity_consent_upload"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.schoolapp.view.ui.activities.ConsentDetailActivity"
+            android:label="@string/title_activity_consent_detail"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="com.example.schoolapp.view.ui.activities.AbsenceUploadActivity" />
+        <activity android:name="com.example.schoolapp.view.ui.activities.AbsenceDetailActivity" />
+        <activity android:name="com.example.schoolapp.view.ui.activities.AbsenceListingActivity" />
+        <activity android:name="com.example.schoolapp.view.ui.activities.ConsentListingActivity" />
+        <activity android:name="com.example.schoolapp.view.ui.activities.MedicalListingActivity" />
+        <activity android:name="com.example.schoolapp.view.ui.activities.MedicalDetailActivity" />
+        <activity android:name="com.example.schoolapp.view.ui.activities.MedicalUploadActivity" />
         <activity android:name="com.example.schoolapp.view.ui.activities.TeachersActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

@@ -11,7 +11,7 @@ class Absence: Serializable {
     var datePublished: String? = ""
     var views: String? = "0"
     var publisher: String? = ""
-    var imageURL: String? = ""
+    var absenceImageURL: String? = ""
 
     @get:Exclude
     @set:Exclude

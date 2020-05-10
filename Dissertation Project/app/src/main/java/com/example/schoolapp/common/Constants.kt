@@ -9,10 +9,29 @@ object Constants {
     @JvmField
     val DB = FirebaseDatabase.getInstance()
         .getReference("teacher_announcements")
+    //this next one is for absence forms
+    @JvmField
+    val ABSENCE_DB = FirebaseDatabase.getInstance()
+        .getReference("absence_reports")
+    @JvmField
+    val CONSENT_DB = FirebaseDatabase.getInstance()
+        .getReference("consent_forms")
+    @JvmField
+    val MEDICAL_DB = FirebaseDatabase.getInstance()
+        .getReference("medical_forms")
     //The following points us to where our images will be stored
     @JvmField
     val IMAGES_DB = FirebaseStorage.getInstance()
         .getReference("teacher_announcements")
+    @JvmField
+    val ABSENCE_IMAGES_DB = FirebaseStorage.getInstance()
+        .getReference("absence_reports")
+    @JvmField
+    val CONSENT_IMAGES_DB = FirebaseStorage.getInstance()
+        .getReference("consent_forms")
+    @JvmField
+    val MEDICAL_IMAGES_DB = FirebaseStorage.getInstance()
+        .getReference("medical_forms")
 
     val ADMIN_EMAIL = "clarkkent@gmail.com"
     val EDITOR_1_EMAIL = "johndoe@gmail.com"

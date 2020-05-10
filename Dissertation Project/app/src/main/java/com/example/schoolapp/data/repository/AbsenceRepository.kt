@@ -13,9 +13,9 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.StorageTask
 import com.google.firebase.storage.UploadTask
-import com.example.schoolapp.common.Constants.DB
+import com.example.schoolapp.common.Constants.ABSENCE_DB
 import com.example.schoolapp.common.Constants.FAILED
-import com.example.schoolapp.common.Constants.IMAGES_DB
+import com.example.schoolapp.common.Constants.ABSENCE_IMAGES_DB
 import com.example.schoolapp.common.Constants.IN_PROGRESS
 import com.example.schoolapp.common.Constants.SUCCEEDED
 import com.example.schoolapp.common.Utils.A_MEM_CACHE
@@ -31,7 +31,7 @@ class AbsenceRepository {
         r.status = IN_PROGRESS
         r.message = "Fetching Absence Reports Please Wait.."
         mLiveData.value = r
-        DB.addValueEventListener(object : ValueEventListener {
+        ABSENCE_DB.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 A_MEM_CACHE.clear()
                 if (dataSnapshot.exists() && dataSnapshot.childrenCount > 0) {
@@ -73,9 +73,9 @@ class AbsenceRepository {
             //push data to FirebaseDatabase. Table or Child called News will be created.
             try{
                 if (absence.key.isNullOrEmpty()){
-                    DB.push().setValue(absence);
+                    ABSENCE_DB.push().setValue(absence);
                 }else{
-                    DB.child(absence.key!!).setValue(absence)
+                    ABSENCE_DB.child(absence.key!!).setValue(absence)
                 }
                 r.status = SUCCEEDED
                 r.message = "Congrats!. Successfully Saved."
@@ -98,18 +98,18 @@ class AbsenceRepository {
             r.message = "Inserting Absence Reports...Please wait.."
             mutableLiveData.postValue(r)
             //push data to FirebaseDatabase. Table or Child called News will be created.
-            DB.push().setValue(absence)
+            ABSENCE_DB.push().setValue(absence)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
                         r.status = SUCCEEDED
-                        if (absence.imageURL != null && absence.imageURL!!.isNotEmpty()) {
+                        if (absence.absenceImageURL != null && absence.absenceImageURL!!.isNotEmpty()) {
                             r.message = "Congrats! Both Text and Image Inserted Successfully"
                         } else {
                             r.message = "Text Successfully Saved."
                         }
                     } else {
                         r.status = FAILED
-                        if (absence.imageURL != null && absence.imageURL!!.isNotEmpty()) {
+                        if (absence.absenceImageURL != null && absence.absenceImageURL!!.isNotEmpty()) {
                             r.message =
                                 "Unfortunaletly Text Was Not Inserted. However Image was uploaded. ERROR: " + task.exception!!.message
                         } else {
@@ -138,7 +138,7 @@ class AbsenceRepository {
             r.status = IN_PROGRESS
             r.message = "Now Uploading Image...Please wait.."
             mutableLiveData.postValue(r)
-            val imageRef: StorageReference = IMAGES_DB.child(mImageUri.lastPathSegment!!)
+            val imageRef: StorageReference = ABSENCE_IMAGES_DB.child(mImageUri.lastPathSegment!!)
             mUploadTask = imageRef.putFile(mImageUri)
             (mUploadTask as UploadTask).continueWithTask(
                 (Continuation { task: Task<UploadTask.TaskSnapshot?> ->
@@ -153,7 +153,7 @@ class AbsenceRepository {
                     if (task.isSuccessful) {
                         val downloadUri = task.result
                         val url = downloadUri.toString()
-                        absence.imageURL = url
+                        absence.absenceImageURL = url
                         r.status = IN_PROGRESS
                         r.message = "Image Upload successful. We are now saving text details"
                     } else {
@@ -183,7 +183,7 @@ class AbsenceRepository {
             r.status = IN_PROGRESS
             r.message = "Now Uploading Image...Please wait.."
             mutableLiveData.postValue(r)
-            val imageRef: StorageReference = IMAGES_DB.child(mImageUri.lastPathSegment!!)
+            val imageRef: StorageReference = ABSENCE_IMAGES_DB.child(mImageUri.lastPathSegment!!)
             mUploadTask = imageRef.putFile(mImageUri)
             (mUploadTask as UploadTask).continueWithTask(
                 (Continuation { task: Task<UploadTask.TaskSnapshot?> ->
@@ -202,7 +202,7 @@ class AbsenceRepository {
                             val url =
                                 Objects.requireNonNull(downloadUri)
                                     .toString()
-                            absence.imageURL = url
+                            absence.absenceImageURL = url
                             r.status =
                                 IN_PROGRESS
                             r.message =
@@ -235,11 +235,11 @@ class AbsenceRepository {
             r.message = "Updating News...Please wait.."
             mLiveData.postValue(r)
             val finalLiveData: MutableLiveData<AbsenceRequestCall> = mLiveData
-            DB.child(absence.key!!).setValue(absence)
+            ABSENCE_DB.child(absence.key!!).setValue(absence)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
                         r.status = SUCCEEDED
-                        if (absence.imageURL != null && absence.imageURL!!.isNotEmpty()) {
+                        if (absence.absenceImageURL != null && absence.absenceImageURL!!.isNotEmpty()) {
                             r.message = "Congrats! Both Text and Image Updated Successfully"
                         } else {
                             r.message =
@@ -247,7 +247,7 @@ class AbsenceRepository {
                         }
                     } else {
                         r.status = FAILED
-                        if (absence.imageURL != null && absence.imageURL!!.isNotEmpty()) {
+                        if (absence.absenceImageURL != null && absence.absenceImageURL!!.isNotEmpty()) {
                             r.message =
                                 "Unfortunaletly Text Was Not Updated. However Image was uploaded. ERROR: " + task.exception!!.message
                         } else {
@@ -271,13 +271,13 @@ class AbsenceRepository {
             r.message = "Deleting News...Please wait.."
             mutableLiveData.postValue(r)
             val selectedStarKey = selectedAbsence.key
-            DB.child(selectedStarKey!!).removeValue()
+            ABSENCE_DB.child(selectedStarKey!!).removeValue()
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
                         r.status = IN_PROGRESS
                         r.message =
                             selectedAbsence.childName + " text REMOVED DELETED SUCCESSFULLY..Now deleting image"
-                        mutableLiveData = deleteOnlyImage(selectedAbsence.imageURL!!, true)
+                        mutableLiveData = deleteOnlyImage(selectedAbsence.absenceImageURL!!, true)
                     } else {
                         r.status = FAILED
                         r.message = "UNSUCCESSFUL: " + task.exception!!.message
@@ -347,7 +347,7 @@ class AbsenceRepository {
             searchTerm = firstLetter + remainingLetters
         }
         val firebaseSearchQuery: Query =
-            DB.orderByChild("name").startAt(searchTerm)
+            ABSENCE_DB.orderByChild("name").startAt(searchTerm)
                 .endAt(searchTerm + "\uf8ff")
         val tempSearchTerm = searchTerm
         firebaseSearchQuery.addValueEventListener(object : ValueEventListener {

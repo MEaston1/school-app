@@ -11,7 +11,6 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import com.example.schoolapp.view.ui.base.BaseActivity
 import com.example.schoolapp.R
 import com.example.schoolapp.common.Constants.SUCCEEDED
 import com.example.schoolapp.common.Utils.openActivity
@@ -30,10 +29,10 @@ import com.example.schoolapp.common.Utils.loadImageFromNetwork
 import com.example.schoolapp.common.Utils.receiveAbsence
 import com.example.schoolapp.view.ui.base.BaseEditingActivity
 import kotlinx.android.synthetic.main.activity_absence_upload.*
-import kotlinx.android.synthetic.main.activity_upload.datePublished
-import kotlinx.android.synthetic.main.activity_upload.dateUpdated
-import kotlinx.android.synthetic.main.activity_upload.pickedImg
-import kotlinx.android.synthetic.main.activity_upload.topImageImg
+import kotlinx.android.synthetic.main.activity_absence_upload.absenceDatePublished
+import kotlinx.android.synthetic.main.activity_absence_upload.absenceDateUpdated
+import kotlinx.android.synthetic.main.activity_absence_upload.pickedAbsenceImg
+import kotlinx.android.synthetic.main.activity_absence_upload.topAbsenceImageImg
 import java.io.File
 
 class AbsenceUploadActivity : BaseEditingActivity() {
@@ -58,20 +57,20 @@ class AbsenceUploadActivity : BaseEditingActivity() {
                 val filePath =
                     data.getStringExtra(ImageSelectActivity.RESULT_FILE_PATH)
                 chosenFile = File(filePath)
-                Picasso.get().load(chosenFile!!).error(R.drawable.image_not_found).into(topImageImg)
+                Picasso.get().load(chosenFile!!).error(R.drawable.image_not_found).into(topAbsenceImageImg)
             }
         }
         resumedAfterImagePicker = true
     }
 
     private fun handleEvents() {
-        datePublished.setOnClickListener { v: View? ->
-            selectDate(datePublished)
+        absenceDatePublished.setOnClickListener { v: View? ->
+            selectDate(absenceDatePublished)
         }
-        dateUpdated.setOnClickListener { v: View? ->
-            selectDate(dateUpdated)
+        absenceDateUpdated.setOnClickListener { v: View? ->
+            selectDate(absenceDateUpdated)
         }
-        pickedImg.setOnClickListener { v: View? -> checkPermissionsThenPickImage() }
+        pickedAbsenceImg.setOnClickListener { v: View? -> checkPermissionsThenPickImage() }
 
     }
     private fun checkPermissionsThenPickImage() {
@@ -105,7 +104,7 @@ class AbsenceUploadActivity : BaseEditingActivity() {
             .observe(this, Observer { r ->
                 if (makeAbsenceRequest(r, "FORM PUBLISHING") == SUCCEEDED) {
                     show("Absence Form Published Successfully")
-                    clearEditTexts(childNameTxt!!, absenceReasonTxt!!, absenceDurationTxt!!, datePublished!!)
+                    clearEditTexts(childNameTxt!!, absenceReasonTxt!!, absenceDurationTxt!!, absenceDatePublished!!)
                 }
             })
     }
@@ -114,7 +113,7 @@ class AbsenceUploadActivity : BaseEditingActivity() {
             .observe(this, Observer { r ->
                 if (makeAbsenceRequest(r, "FORM PUBLISHING") == SUCCEEDED) {
                     show("Absence Form Publishing Successfully")
-                    clearEditTexts(childNameTxt!!, absenceReasonTxt!!, absenceDurationTxt!!, datePublished!!)
+                    clearEditTexts(childNameTxt!!, absenceReasonTxt!!, absenceDurationTxt!!, absenceDatePublished!!)
                 }
             })
     }
@@ -161,9 +160,9 @@ class AbsenceUploadActivity : BaseEditingActivity() {
             n.childName = valOf(childNameTxt)
             n.absenceReason = valOf(absenceReasonTxt)
             n.durationExpected = valOf(absenceDurationTxt)
-            n.datePublished = valOf(datePublished)
-            n.dateUpdated = valOf(dateUpdated)
-            n.imageURL = ""
+            n.datePublished = valOf(absenceDatePublished)
+            n.dateUpdated = valOf(absenceDateUpdated)
+            n.absenceImageURL = ""
             n.views="0"
             n.publisher= CacheManager.CURRENT_USER
 
@@ -183,8 +182,8 @@ class AbsenceUploadActivity : BaseEditingActivity() {
             n!!.childName = valOf(childNameTxt)
             n.absenceReason = valOf(absenceReasonTxt)
             n.durationExpected = valOf(absenceDurationTxt)
-            n.datePublished = valOf(datePublished)
-            n.dateUpdated = valOf(dateUpdated)
+            n.datePublished = valOf(absenceDatePublished)
+            n.dateUpdated = valOf(absenceDateUpdated)
             if (chosenFile == null) {
                 updateOnlyText(n)
             } else {
@@ -242,15 +241,15 @@ class AbsenceUploadActivity : BaseEditingActivity() {
                     childNameTxt.setText(receivedAbsence!!.childName)
                     absenceReasonTxt.setText(receivedAbsence!!.absenceReason)
                     absenceDurationTxt.setText(receivedAbsence!!.durationExpected)
-                    datePublished.setText(receivedAbsence!!.datePublished)
-                    dateUpdated.setText(receivedAbsence!!.dateUpdated)
+                    absenceDatePublished.setText(receivedAbsence!!.datePublished)
+                    absenceDateUpdated.setText(receivedAbsence!!.dateUpdated)
                 }
                 when {
                     chosenFile != null -> {
-                        Picasso.get().load(chosenFile!!).error(R.drawable.image_not_found).into(topImageImg)
+                        Picasso.get().load(chosenFile!!).error(R.drawable.image_not_found).into(topAbsenceImageImg)
                     }
                     else -> {
-                        loadImageFromNetwork(receivedAbsence!!.imageURL!!, R.drawable.image_not_found, topImageImg)
+                        loadImageFromNetwork(receivedAbsence!!.absenceImageURL!!, R.drawable.image_not_found, topAbsenceImageImg)
                     }
                 }
             }

@@ -53,7 +53,6 @@ class DetailActivity : BaseActivity() {
             }else{
                 Utils.promptLogin(this, "INSUFFICIENT PRIVILEGES", "You need to Login First")
             }
-
         }
     }
 

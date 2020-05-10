@@ -20,10 +20,8 @@ class AbsenceDetailActivity : BaseActivity() {
 
     private var receivedAbsence: Absence? = null
 
-    /**
-     * We will now receive and show our data to their appropriate views.
-     */
-    private fun receiveAndShowData() {
+
+    private fun receiveAndShowAbsenceData() {
         receivedAbsence = receiveAbsence(intent, this@AbsenceDetailActivity)
         if (receivedAbsence != null) {
             titleAbsenceTV.text = receivedAbsence!!.childName
@@ -33,7 +31,7 @@ class AbsenceDetailActivity : BaseActivity() {
             dateAbsenceUpdated.text = receivedAbsence!!.dateUpdated
             authorAbsenceTV.text = receivedAbsence!!.publisher
             mCollapsingToolbarLayout.setExpandedTitleColor(resources.getColor(R.color.white))
-            loadImageFromNetwork(receivedAbsence!!.imageURL!!,
+            loadImageFromNetwork(receivedAbsence!!.absenceImageURL!!,
                 LOCAL_IMAGES[Random().nextInt(LOCAL_IMAGES.size)], dAbsenceImageView
             )
 
@@ -47,7 +45,7 @@ class AbsenceDetailActivity : BaseActivity() {
 
         editAbsenceFAB.setOnClickListener {
             if (PermissionManager.isLoggedIn){
-                sendAbsenceAnnouncementToActivity(this, receivedAbsence, UploadActivity::class.java)
+                sendAbsenceAnnouncementToActivity(this, receivedAbsence, AbsenceUploadActivity::class.java)
                 finish()
             }else{
                 Utils.promptLogin(this, "INSUFFICIENT PRIVILEGES", "You need to Login First")

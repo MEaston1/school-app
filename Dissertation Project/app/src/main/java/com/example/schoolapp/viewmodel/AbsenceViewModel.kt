@@ -8,7 +8,8 @@ import com.example.schoolapp.data.model.entity.Absence
 import com.example.schoolapp.data.model.process.AbsenceRequestCall
 import com.example.schoolapp.data.repository.AbsenceRepository
 
-class AbsenceViewModel(application: Application) : AndroidViewModel(application) {
+class AbsenceViewModel(application: Application) :
+    AndroidViewModel(application) {
     private val absenceRepository: AbsenceRepository = AbsenceRepository()
     fun saveLocally(absence: Absence): MutableLiveData<AbsenceRequestCall> {
         return absenceRepository.saveTextLocally(absence)

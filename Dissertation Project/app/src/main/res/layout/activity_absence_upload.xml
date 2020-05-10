@@ -27,7 +27,7 @@
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
                 <ImageView
-                    android:id="@+id/topImageImg"
+                    android:id="@+id/topAbsenceImageImg"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fitsSystemWindows="true"
@@ -45,7 +45,7 @@
 
 
                 <cn.gavinliu.android.lib.shapedimageview.ShapedImageView
-                    android:id="@+id/pickedImg"
+                    android:id="@+id/pickedAbsenceImg"
                     android:layout_width="120dp"
                     android:layout_height="120dp"
                     android:layout_gravity="top|end"
@@ -114,7 +114,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:padding="@dimen/text_padding"
-                            android:text="Provide the details in the fields below then click the save button in the toolbar. Some fields must be provided." />
+                            android:text="Provide the details in the fields below then click the save button in the toolbar. Some fields must be provided. If you have image evidence provide it in the image field above." />
 
                     </LinearLayout>
 
@@ -237,7 +237,7 @@
                             android:layout_marginRight="8dp">
 
                             <EditText
-                                android:id="@+id/datePublished"
+                                android:id="@+id/absenceDatePublished"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:padding="@dimen/text_padding"
@@ -258,7 +258,7 @@
                             android:layout_marginRight="8dp">
 
                             <EditText
-                                android:id="@+id/dateUpdated"
+                                android:id="@+id/absenceDateUpdated"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:padding="@dimen/text_padding"

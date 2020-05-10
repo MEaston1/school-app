@@ -16,8 +16,12 @@ import com.example.schoolapp.common.Constants.FAILED
 import com.example.schoolapp.common.Constants.IN_PROGRESS
 import com.example.schoolapp.common.Constants.SUCCEEDED
 import com.example.schoolapp.data.model.process.AbsenceRequestCall
+import com.example.schoolapp.data.model.process.ConsentRequestCall
+import com.example.schoolapp.data.model.process.MedicalRequestCall
 import com.example.schoolapp.data.model.process.RequestCall
 import com.example.schoolapp.viewmodel.AbsenceViewModel
+import com.example.schoolapp.viewmodel.ConsentViewModel
+import com.example.schoolapp.viewmodel.MedicalViewModel
 import com.example.schoolapp.viewmodel.NewsViewModel
 import kotlinx.android.synthetic.main._state.*
 
@@ -29,6 +33,12 @@ open class BaseActivity : AppCompatActivity() {
     }
     protected fun absenceViewModel(): AbsenceViewModel{
         return ViewModelProvider(this).get(AbsenceViewModel::class.java)
+    }
+    protected fun consentViewModel(): ConsentViewModel{
+        return ViewModelProvider(this).get(ConsentViewModel::class.java)
+    }
+    protected fun medicalViewModel(): MedicalViewModel{
+        return ViewModelProvider(this).get(MedicalViewModel::class.java)
     }
     protected fun openPage(clazz: Class<*>?) {
         val intent = Intent(this, clazz)
@@ -130,6 +140,44 @@ open class BaseActivity : AppCompatActivity() {
     protected fun makeAbsenceRequest(r: AbsenceRequestCall?, OPERATION: String): Int {
         if (r == null) {
             createStateCard("$OPERATION FAILED", "Null AbsenceRequestCall Received", isShowing = true, isLoading = false, STATE = FAILED)
+        } else {
+            when (r.status) {
+                IN_PROGRESS -> {
+                    createStateCard("$OPERATION IN PROGRESS", r.message, true, true, IN_PROGRESS)
+                }
+                FAILED -> {
+                    createStateCard("ERROR", r.message, true, false, FAILED)
+                }
+                SUCCEEDED -> {
+                    createStateCard("CONGRATS!", r.message, true, false, SUCCEEDED)
+                }
+            }
+            return r.status
+        }
+        return -999
+    }
+    protected fun makeConsentRequest(r: ConsentRequestCall?, OPERATION: String): Int {
+        if (r == null) {
+            createStateCard("$OPERATION FAILED", "Null ConsentRequestCall Received", isShowing = true, isLoading = false, STATE = FAILED)
+        } else {
+            when (r.status) {
+                IN_PROGRESS -> {
+                    createStateCard("$OPERATION IN PROGRESS", r.message, true, true, IN_PROGRESS)
+                }
+                FAILED -> {
+                    createStateCard("ERROR", r.message, true, false, FAILED)
+                }
+                SUCCEEDED -> {
+                    createStateCard("CONGRATS!", r.message, true, false, SUCCEEDED)
+                }
+            }
+            return r.status
+        }
+        return -999
+    }
+    protected fun makeMedicalRequest(r: MedicalRequestCall?, OPERATION: String): Int {
+        if (r == null) {
+            createStateCard("$OPERATION FAILED", "Null MedicalRequestCall Received", isShowing = true, isLoading = false, STATE = FAILED)
         } else {
             when (r.status) {
                 IN_PROGRESS -> {

@@ -8,16 +8,16 @@ import kotlinx.android.synthetic.main.activity_teachers.*
 class TeachersActivity : BaseActivity() {
     private fun initializeWidgets() { //We have 4 cards in the dashboard
         viewAbsenceCard!!.setOnClickListener {
-            openActivity(this, ListingActivity::class.java)
+            openActivity(this, AbsenceListingActivity::class.java)
         }
         addAnnouncementsCard!!.setOnClickListener {
             openActivity(this, UploadActivity::class.java)
         }
         viewMedicalCard!!.setOnClickListener {
-            openActivity(this, UploadActivity::class.java)
+            openActivity(this, MedicalListingActivity::class.java)
         }
         viewConsentCard!!.setOnClickListener {
-            openActivity(this, UploadActivity::class.java)
+            openActivity(this, ConsentListingActivity::class.java)
         }
     }
     override fun onCreate(savedInstanceState: Bundle?) {
