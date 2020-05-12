@@ -80,7 +80,7 @@
                 android:paddingBottom="5dp">
 
                 <TextView
-                    android:id="@+id/headerMedicalTxt"
+                    android:id="@+id/headerUploadMedicalTxt"
                     fontPath="fonts/Roboto-Bold.ttf"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

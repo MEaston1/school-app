@@ -1556,8 +1556,8 @@ id gone
 id group_divider
 id groups
 id headerConsentTxt
-id headerMedicalTxt
 id headerTxt
+id headerUploadMedicalTxt
 id home
 id homeAsUp
 id horizontal

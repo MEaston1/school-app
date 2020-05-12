@@ -8,6 +8,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.lifecycle.Observer
@@ -17,6 +18,7 @@ import com.example.schoolapp.common.Constants
 import com.example.schoolapp.common.Utils
 import com.example.schoolapp.common.Utils.loadImageFromNetwork
 import com.example.schoolapp.common.Utils.receiveMedical
+import com.example.schoolapp.common.Utils.showInfoDialog
 import com.example.schoolapp.data.model.entity.Medical
 import com.example.schoolapp.view.ui.base.BaseEditingActivity
 import com.karumi.dexter.Dexter
@@ -186,20 +188,19 @@ class MedicalUploadActivity : BaseEditingActivity() {
     }
 
     override fun onBackPressed() {
-        Utils.showInfoDialog(
-            this, "Warning", "Are you sure you want to exit?"
+        showInfoDialog(this, "Warning", "Are you sure you want to exit?"
         )
     }
 
     //Can't use the same menu as another activity without crashing
 
-    /*override fun onCreateOptionsMenu(menu: Menu): Boolean {
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
         if (receivedMedical == null) {
             menuInflater.inflate(R.menu.new_item_menu, menu)
-            medicalHeaderTxt!!.text = "Add Medical Form"
+            headerUploadMedicalTxt!!.text = "Add Medical Form"
         }
         return true
-    }*/
+    }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {

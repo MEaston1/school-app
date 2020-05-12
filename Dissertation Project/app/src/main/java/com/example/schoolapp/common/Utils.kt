@@ -55,9 +55,9 @@ object Utils {
     @JvmStatic
     fun showInfoDialog(activity: AppCompatActivity, title: String?, message: String?) {
         LovelyStandardDialog(activity, LovelyStandardDialog.ButtonLayout.HORIZONTAL)
-            .setTopColorRes(R.color.indigo)
-            .setButtonsColorRes(R.color.darkDeepOrange)
-            .setIcon(R.drawable.home_round)
+            .setTopColorRes(R.color.colorPrimary)
+            .setButtonsColorRes(R.color.colorPrimaryDark)
+            .setIcon(R.drawable.graduation_cap)
             .setTitle(title)
             .setMessage(message)
             .setPositiveButton("Relax") { }

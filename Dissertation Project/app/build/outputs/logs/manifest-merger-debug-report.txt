@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:2:1-84:12
-INJECTED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:2:1-84:12
-INJECTED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:2:1-84:12
-INJECTED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:2:1-84:12
+ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:2:1-91:12
+INJECTED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:2:1-91:12
+INJECTED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:2:1-91:12
+INJECTED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:2:1-91:12
 MERGED from [com.dc.easyadapter:easyadapter:2.0.3] C:\Users\Matthew\.gradle\caches\transforms-2\files-2.1\2e0d3b96fbdef123b192ffe46b4480fe\jetified-easyadapter-2.0.3\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.databinding:databinding-adapters:3.6.1] C:\Users\Matthew\.gradle\caches\transforms-2\files-2.1\7e703baaad203f318af7e9fb3ffad961\databinding-adapters-3.6.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.databinding:databinding-runtime:3.6.1] C:\Users\Matthew\.gradle\caches\transforms-2\files-2.1\b430f0f900bd8d30fa8d5f789286a6ab\databinding-runtime-3.6.1\AndroidManifest.xml:17:1-24:12
@@ -109,25 +109,25 @@ MERGED from [androidx.sqlite:sqlite-framework:2.0.0] C:\Users\Matthew\.gradle\ca
 MERGED from [androidx.sqlite:sqlite:2.0.0] C:\Users\Matthew\.gradle\caches\transforms-2\files-2.1\0ebb2ec5e0222931a01ee0ee02bec3f7\sqlite-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-database-collection:17.0.0] C:\Users\Matthew\.gradle\caches\transforms-2\files-2.1\eea5808f130e7a4b7b348ba03cd0ba49\jetified-firebase-database-collection-17.0.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.datatransport:transport-api:2.2.0] C:\Users\Matthew\.gradle\caches\transforms-2\files-2.1\14c1d9ad4df80e9ea3f05d30263c402a\jetified-transport-api-2.2.0\AndroidManifest.xml:15:1-22:12
-INJECTED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:2:1-84:12
-INJECTED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:2:1-84:12
-INJECTED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:2:1-84:12
+INJECTED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:2:1-91:12
+INJECTED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:2:1-91:12
+INJECTED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:2:1-91:12
 	package
 		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:3:5-36
 		INJECTED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:2:1-84:12
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:2:1-91:12
 		INJECTED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:2:1-84:12
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:2:1-91:12
 		INJECTED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:5:5-82:19
+ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:5:5-89:19
 MERGED from [com.karumi:dexter:4.2.0] C:\Users\Matthew\.gradle\caches\transforms-2\files-2.1\d807eaa916d082193e208b1e0e4d1dae\jetified-dexter-4.2.0\AndroidManifest.xml:26:5-30:19
 MERGED from [com.karumi:dexter:4.2.0] C:\Users\Matthew\.gradle\caches\transforms-2\files-2.1\d807eaa916d082193e208b1e0e4d1dae\jetified-dexter-4.2.0\AndroidManifest.xml:26:5-30:19
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\Matthew\.gradle\caches\transforms-2\files-2.1\4190def4ef5d7c8dad9d2f596b8779e8\material-1.0.0\AndroidManifest.xml:22:5-20
@@ -235,123 +235,137 @@ ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app
 	android:name
 		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:15:17-63
 activity#com.example.schoolapp.view.ui.activities.ConsentUploadActivity
-ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:18:9-21:59
+ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:18:9-22:48
+	android:parentActivityName
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:21:13-55
 	android:label
-		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:20:13-66
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:20:13-35
 	android:theme
-		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:21:13-56
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:22:13-45
 	android:name
 		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:19:13-69
 activity#com.example.schoolapp.view.ui.activities.ConsentDetailActivity
-ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:22:9-25:59
+ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:23:9-26:59
 	android:label
-		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:24:13-66
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:25:13-66
 	android:theme
-		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:25:13-56
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:26:13-56
 	android:name
-		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:23:13-69
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:24:13-69
 activity#com.example.schoolapp.view.ui.activities.AbsenceUploadActivity
-ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:26:9-78
-	android:name
-		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:26:19-75
-activity#com.example.schoolapp.view.ui.activities.AbsenceDetailActivity
-ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:27:9-78
+ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:27:9-30:48
+	android:parentActivityName
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:29:13-55
+	android:label
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:28:13-35
+	android:theme
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:30:13-45
 	android:name
 		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:27:19-75
-activity#com.example.schoolapp.view.ui.activities.AbsenceListingActivity
-ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:28:9-79
-	android:name
-		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:28:19-76
-activity#com.example.schoolapp.view.ui.activities.ConsentListingActivity
-ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:29:9-79
-	android:name
-		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:29:19-76
-activity#com.example.schoolapp.view.ui.activities.MedicalListingActivity
-ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:30:9-79
-	android:name
-		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:30:19-76
-activity#com.example.schoolapp.view.ui.activities.MedicalDetailActivity
+activity#com.example.schoolapp.view.ui.activities.AbsenceDetailActivity
 ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:31:9-78
 	android:name
 		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:31:19-75
+activity#com.example.schoolapp.view.ui.activities.AbsenceListingActivity
+ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:32:9-79
+	android:name
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:32:19-76
+activity#com.example.schoolapp.view.ui.activities.ConsentListingActivity
+ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:33:9-79
+	android:name
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:33:19-76
+activity#com.example.schoolapp.view.ui.activities.MedicalListingActivity
+ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:34:9-79
+	android:name
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:34:19-76
+activity#com.example.schoolapp.view.ui.activities.MedicalDetailActivity
+ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:35:9-78
+	android:name
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:35:19-75
 activity#com.example.schoolapp.view.ui.activities.MedicalUploadActivity
-ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:32:9-78
+ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:36:9-39:48
+	android:parentActivityName
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:38:13-55
+	android:label
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:37:13-35
+	android:theme
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:39:13-45
 	android:name
-		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:32:19-75
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:36:19-75
 activity#com.example.schoolapp.view.ui.activities.TeachersActivity
-ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:33:9-37:20
+ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:40:9-44:20
 	android:name
-		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:33:19-70
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:40:19-70
 activity#com.example.schoolapp.view.ui.activities.SplashActivity
-ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:38:9-46:20
+ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:45:9-53:20
 	android:theme
-		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:40:13-47
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:47:13-47
 	android:name
-		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:39:13-62
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:46:13-62
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:41:13-45:29
+ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:48:13-52:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:42:17-69
+ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:49:17-69
 	android:name
-		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:42:25-66
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:49:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:44:17-77
+ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:51:17-77
 	android:name
-		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:44:27-74
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:51:27-74
 activity#com.example.schoolapp.registerlogin.RegisterActivity
-ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:47:9-68
+ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:54:9-68
 	android:name
-		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:47:19-65
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:54:19-65
 activity#com.example.schoolapp.registerlogin.LoginActivity
-ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:48:9-50:46
+ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:55:9-57:46
 	android:label
-		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:50:13-43
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:57:13-43
 	android:name
-		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:49:13-56
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:56:13-56
 activity#com.example.schoolapp.MainActivity
-ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:51:9-53:59
+ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:58:9-60:59
 	android:theme
-		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:53:13-56
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:60:13-56
 	android:name
-		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:52:13-41
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:59:13-41
 activity#com.example.schoolapp.view.ui.activities.ListingActivity
-ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:54:9-57:58
+ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:61:9-64:58
 	android:parentActivityName
-		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:57:13-55
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:64:13-55
 	android:label
-		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:56:13-42
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:63:13-42
 	android:name
-		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:55:13-63
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:62:13-63
 activity#com.example.schoolapp.view.ui.activities.UploadActivity
-ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:58:9-62:48
+ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:65:9-69:48
 	android:parentActivityName
-		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:61:13-55
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:68:13-55
 	android:label
-		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:60:13-35
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:67:13-35
 	android:theme
-		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:62:13-45
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:69:13-45
 	android:name
-		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:59:13-62
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:66:13-62
 activity#com.example.schoolapp.messages.NewMessageActivity
-ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:63:9-67:20
+ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:70:9-74:20
 	android:name
-		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:63:19-62
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:70:19-62
 activity#com.example.schoolapp.messages.ChatLogActivity
-ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:68:9-72:20
+ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:75:9-79:20
 	android:name
-		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:68:19-59
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:75:19-59
 activity#com.example.schoolapp.view.ui.activities.DetailActivity
-ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:73:9-76:80
+ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:80:9-83:80
 	android:parentActivityName
-		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:76:13-77
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:83:13-77
 	android:label
-		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:75:13-50
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:82:13-50
 	android:name
-		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:74:13-62
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:81:13-62
 activity#com.example.schoolapp.messages.LatestMessagesActivity
-ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:77:9-81:20
+ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:84:9-88:20
 	android:name
-		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:77:19-66
+		ADDED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml:84:19-66
 uses-sdk
 INJECTED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Matthew\Documents\GitHub\school-app\Dissertation Project\app\src\main\AndroidManifest.xml

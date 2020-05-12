@@ -1555,8 +1555,8 @@ int id gone 0x7f0900f7
 int id group_divider 0x7f0900f8
 int id groups 0x7f0900f9
 int id headerConsentTxt 0x7f0900fa
-int id headerMedicalTxt 0x7f0900fb
-int id headerTxt 0x7f0900fc
+int id headerTxt 0x7f0900fb
+int id headerUploadMedicalTxt 0x7f0900fc
 int id home 0x7f0900fd
 int id homeAsUp 0x7f0900fe
 int id horizontal 0x7f0900ff
