@@ -58,16 +58,16 @@ class LatestMessagesActivity : AppCompatActivity() {
         ref.addChildEventListener(object: ChildEventListener{
             override fun onChildChanged(p0: DataSnapshot, p1: String?) {
                 val chatMessage = p0.getValue(ChatMessage::class.java) ?: return        // unwrapped using the elvis operator
-                latestMessagesMap[p0.key!!] = chatMessage
+                latestMessagesMap[p0.key!!] = chatMessage                               // changes text below each user's name
                 refreshRecyclerviewMessages()
             }
-            override fun onChildAdded(p0: DataSnapshot, p1: String?) {
+            override fun onChildAdded(p0: DataSnapshot, p1: String?) {       //Same as function above but triggered when added
                 val chatMessage = p0.getValue(ChatMessage::class.java) ?: return
                 latestMessagesMap[p0.key!!] = chatMessage
                 refreshRecyclerviewMessages()
 
             }
-            override fun onChildMoved(p0: DataSnapshot, p1: String?) {
+            override fun onChildMoved(p0: DataSnapshot, p1: String?) { //standard occurrence functions mandatory for a listener
             }
             override fun onChildRemoved(p0: DataSnapshot) {
             }

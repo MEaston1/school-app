@@ -86,16 +86,15 @@ class ChatLogActivity : AppCompatActivity() {
     }
 
     private fun performSendMessage() {
-        // how do we actually send a message to firebase...
         val text = edittext_chat_log.text.toString()
 
-        val fromId = FirebaseAuth.getInstance().uid
-        val user = intent.getParcelableExtra<User>(NewMessageActivity.USER_KEY)
-        val toId = user.uid
+        val fromId = FirebaseAuth.getInstance().uid //gets the unique id of the user
+        val user = intent.getParcelableExtra<User>(NewMessageActivity.USER_KEY) //parcelizes the user from NMActivity class
+        val toId = user.uid     // turns the parcelized user into the "to" user
 
         if (fromId == null) return
 
-//    val reference = FirebaseDatabase.getInstance().getReference("/messages").push()
+        // creates a new branch in the NoSQL database called user-messages
         val reference = FirebaseDatabase.getInstance().getReference("/user-messages/$fromId/$toId").push()
 
         val toReference = FirebaseDatabase.getInstance().getReference("/user-messages/$toId/$fromId").push()
@@ -110,7 +109,7 @@ class ChatLogActivity : AppCompatActivity() {
             }
 
         toReference.setValue(chatMessage)
-
+        //sets the latest message for the chat list
         val latestMessageRef = FirebaseDatabase.getInstance()
             .getReference("/latest-messages/$fromId/$toId")
         latestMessageRef.setValue(chatMessage)

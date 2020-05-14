@@ -64,11 +64,9 @@ class RegisterActivity : AppCompatActivity() {  // class extends AppCompatActivi
             select_photo_imageview_register.setImageBitmap(bitmap)
 
             select_photo_button.alpha = 0f
-    //        val bitmapDrawable = BitmapDrawable(bitmap)
-    //        select_photo_button.setBackgroundDrawable(bitmapDrawable)
         }
     }
-    private fun performRegister(){                              // this function adds a new account to the firebase databse
+    private fun performRegister(){                              // this function adds a new account to the firebase database
         val email = email_edittext_register.text.toString()           //creating the email and password account values
         val password = password_edittext_register.text.toString()
 
@@ -119,12 +117,12 @@ class RegisterActivity : AppCompatActivity() {  // class extends AppCompatActivi
     private fun saveUserToFirebaseDatabase(profileImageUrl: String){                    //this function saves the user to the remote Firebase Database
         val uid = FirebaseAuth.getInstance().uid ?: ""
         val ref = FirebaseDatabase.getInstance().getReference("/users/$uid")
-
+        val permsStatus = "basic"
         val user =
             User(                                                                // this makes sure the user's information is all grouped in the database
                 uid,
                 username_edittext_register.text.toString(),
-                profileImageUrl
+                profileImageUrl, permsStatus
             )
         ref.setValue(user)
             .addOnSuccessListener {

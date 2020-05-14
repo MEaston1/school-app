@@ -22,6 +22,7 @@ import com.squareup.picasso.Picasso
 import com.example.schoolapp.R
 import com.example.schoolapp.common.CacheManager
 import com.example.schoolapp.common.Constants.SUCCEEDED
+import com.example.schoolapp.common.PermissionManager
 import com.example.schoolapp.common.Utils.loadImageFromNetwork
 import com.example.schoolapp.common.Utils.openActivity
 import com.example.schoolapp.common.Utils.receive
@@ -80,10 +81,10 @@ class UploadActivity : BaseEditingActivity() {
 
     }
 
-    /**
-     * We use a library known as Dexter to check for permissions at
-     * runtime.If we haven't been granted then we present the user with
-     * a dialog to take him to settings page to grant us permission
+    /*
+     We use a library known as Dexter to check for permissions at
+     runtime.If we haven't been granted then we present the user with
+     a dialog to take him to settings page to grant us permission
      */
     private fun checkPermissionsThenPickImage() {
         Dexter.withActivity(this)
@@ -189,9 +190,9 @@ class UploadActivity : BaseEditingActivity() {
         }
     }
 
-    /**
-     * Validate then Update our News. If image has not been changed
-     * then we update only text,otherwise both images and text.
+    /*
+      Validate then Update our News. If image has not been changed
+      then we update only text,otherwise both images and text.
      */
     private fun validateThenUpdate() {
         if (validate(titleTxt, descriptionTxt, countryTxt)) {
@@ -210,24 +211,27 @@ class UploadActivity : BaseEditingActivity() {
         }
     }
 
-    /**
-     * When user presses back button, we will warn him
-     */
+
+     //When user presses back button, we will warn him
+
     override fun onBackPressed() {
         showInfoDialog(this,"Warning","Are you sure you want to exit?"
         )
     }
 
-    /**
-     * Menus will be inflated based on the intention of opening this
-     * activity. If, while we don't pass any news along then we
-     * inflate the new_item_menu. If a news is passed along then we
-     * inflate the edit_item_menu
+    /*
+      Menus will be inflated based on the intention of opening this
+      activity. If, while we don't pass any announcements along then it
+      inflates the new_item_menu. If a news is passed along then it
+      inflates the edit_item_menu
      */
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         if (receivedNews == null) {
             menuInflater.inflate(R.menu.new_item_menu, menu)
             headerTxt!!.text = "Publish News"
+        } else if (PermissionManager.canDeleteItems()) {
+            menuInflater.inflate(R.menu.edit_delete_item_menu, menu)
+            headerTxt!!.text = "Update News"
         } else {
             menuInflater.inflate(R.menu.edit_item_menu, menu)
             headerTxt!!.text = "Update News"
@@ -235,8 +239,8 @@ class UploadActivity : BaseEditingActivity() {
         return true
     }
 
-    /**
-     * When user selects a menu item in toolbar
+    /*
+      When user selects a menu item in toolbar
      */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
@@ -289,9 +293,8 @@ class UploadActivity : BaseEditingActivity() {
         }
     }
 
-    /**
-     * Let's override our onCreate() method
-     */
+
+     //Let's override our onCreate() method
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_upload)

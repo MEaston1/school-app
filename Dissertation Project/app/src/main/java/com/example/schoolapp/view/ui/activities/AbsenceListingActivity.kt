@@ -19,6 +19,7 @@ import com.example.schoolapp.common.Constants.SUCCEEDED
 import com.example.schoolapp.common.Utils
 import com.example.schoolapp.common.Utils.A_MEM_CACHE
 import com.example.schoolapp.common.Utils.getAbsenceImageURLs
+import com.example.schoolapp.common.Utils.openActivity
 import com.example.schoolapp.data.model.entity.Absence
 import com.example.schoolapp.databinding.ModelBinding
 import com.example.schoolapp.view.ui.base.BaseActivity
@@ -44,7 +45,6 @@ class AbsenceListingActivity : BaseActivity(), SearchView.OnQueryTextListener, M
                 .centerCrop().into(imageView)
         }
     })
-
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.listings_page_menu, menu)
         val searchItem = menu.findItem(R.id.action_search)
@@ -143,8 +143,9 @@ class AbsenceListingActivity : BaseActivity(), SearchView.OnQueryTextListener, M
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.action_new) {
-                Utils.openActivity(this, AbsenceUploadActivity::class.java)
+                openActivity(this, AbsenceUploadActivity::class.java)
                 finish()
+
             return true
         }
         return super.onOptionsItemSelected(item)

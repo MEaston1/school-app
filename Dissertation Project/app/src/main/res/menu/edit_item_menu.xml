@@ -11,11 +11,6 @@
         android:icon="@drawable/m_done"
         app:showAsAction="always" />
     <item
-        android:id="@+id/deleteMenuItem"
-        android:title="DELETE"
-        android:icon="@drawable/m_delete"
-        app:showAsAction="always" />
-    <item
         android:id="@+id/viewAllMenuItem"
         android:title="VIEW ALL"
         android:icon="@drawable/m_list"

@@ -80,8 +80,8 @@ class ListingActivity : BaseActivity(), SearchView.OnQueryTextListener, MenuItem
 
                 //SEARCH NEWS
 
-                val query = Utils.SEARCH_STRING
-                if (query.isNotEmpty() && n.title!!.toLowerCase(Locale.getDefault())
+                val query = Utils.SEARCH_STRING     //sets as value from utils data class
+                if (query.isNotEmpty() && n.title!!.toLowerCase(Locale.getDefault()) // turns to lowercase
                         .contains(query.toLowerCase(Locale.getDefault()))
                 ) {
                     val startPos: Int = n.title!!.toLowerCase(Locale.getDefault())

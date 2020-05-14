@@ -11,6 +11,12 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.schoolapp.common.CacheManager
+import com.example.schoolapp.common.CacheManager.CURRENT_USER
+import com.example.schoolapp.common.CacheManager.CURRENT_USER_PERMS
+import com.example.schoolapp.common.Constants.ADMIN_USER
+import com.example.schoolapp.common.Constants.BASIC_USER
+import com.example.schoolapp.common.Constants.EDITOR_USER
+import com.example.schoolapp.common.PermissionManager
 import com.example.schoolapp.common.Utils.openActivity
 import com.example.schoolapp.messages.LatestMessagesActivity
 import com.example.schoolapp.models.User
@@ -51,6 +57,12 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         messageButton.setOnClickListener{
             startActivity(Intent(this, LatestMessagesActivity::class.java))
         }
+        consentButton.setOnClickListener{
+            startActivity(Intent(this, ConsentUploadActivity::class.java))
+        }
+        absenceButton.setOnClickListener{
+            startActivity(Intent(this, AbsenceUploadActivity::class.java))
+        }
         verifyUserIsLoggedIn()
         getUser()
     }
@@ -78,7 +90,11 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
                 Picasso.get().load(user?.profileImageUrl).into(navHeaderImageView)
                 welcomeName.text = user?.username
                 navHeaderTextView.text = user?.username
-
+                if(user?.permsStatus == "teacher"){
+                    CURRENT_USER_PERMS = EDITOR_USER
+                }else if(user?.permsStatus == "admin"){
+                    CURRENT_USER_PERMS = ADMIN_USER
+                }else CURRENT_USER_PERMS = BASIC_USER
             }
             override fun onCancelled(p0: DatabaseError) {
 
@@ -113,12 +129,17 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
                 Toast.makeText(this, "Feature Not Yet Implemented", Toast.LENGTH_SHORT).show()
             }
             R.id.nav_teachers -> {
-                Toast.makeText(this, "Teachers Section Selected", Toast.LENGTH_SHORT).show()
-                openActivity(this, TeachersActivity::class.java)
+
+                if(PermissionManager.canPublishNews()){
+                    Toast.makeText(this, "Access Granted", Toast.LENGTH_SHORT).show()
+                    openActivity(this, TeachersActivity::class.java)
+                }else Toast.makeText(this, "Insufficient Permission level", Toast.LENGTH_SHORT).show()
+
             }
             R.id.nav_logout -> {
                 Toast.makeText(this, "Sign out clicked", Toast.LENGTH_SHORT).show()
                 CacheManager.CURRENT_USER=""
+                CacheManager.CURRENT_USER_PERMS=""
                 FirebaseAuth.getInstance().signOut()
                 val intent = Intent(this, RegisterActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)

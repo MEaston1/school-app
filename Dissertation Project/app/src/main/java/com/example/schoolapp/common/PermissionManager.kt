@@ -1,25 +1,18 @@
 package com.example.schoolapp.common
 
 import com.example.schoolapp.common.CacheManager.CURRENT_USER
+import com.example.schoolapp.common.CacheManager.CURRENT_USER_PERMS
 
 object PermissionManager {
     val isLoggedIn: Boolean
         get() = CURRENT_USER.isNotEmpty()
 
-    fun canOnlyRead(): Boolean {
-        return if (!isLoggedIn) false else CURRENT_USER != Constants.ADMIN_EMAIL
-                || CURRENT_USER != Constants.EDITOR_1_EMAIL
-    }
-
     fun canPublishNews(): Boolean {
-        return if (!isLoggedIn) false else CURRENT_USER === Constants.ADMIN_EMAIL
+        return if (!isLoggedIn) false else CURRENT_USER_PERMS === Constants.ADMIN_USER
+                || CURRENT_USER_PERMS === Constants.EDITOR_USER
     }
-    fun canEditNews(): Boolean {
-        return if (!isLoggedIn) false else CURRENT_USER === Constants.ADMIN_EMAIL
-                || CURRENT_USER === Constants.EDITOR_1_EMAIL
-                || CURRENT_USER === Constants.EDITOR_1_EMAIL
-    }
-    fun canDeleteNews(): Boolean {
-        return if (!isLoggedIn) false else CURRENT_USER === Constants.ADMIN_EMAIL
+    fun canDeleteItems(): Boolean {
+        return if (!isLoggedIn) false else CURRENT_USER_PERMS === Constants.ADMIN_USER
     }
 }
+

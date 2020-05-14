@@ -33,8 +33,10 @@ object Constants {
     val MEDICAL_IMAGES_DB = FirebaseStorage.getInstance()
         .getReference("medical_forms")
 
-    val ADMIN_EMAIL = "clarkkent@gmail.com"
-    val EDITOR_1_EMAIL = "johndoe@gmail.com"
+
+    var ADMIN_USER = "admin"     // Yes i know it's wrong to put changing variables in a "constants" data class.
+    var EDITOR_USER = "teacher"
+    var BASIC_USER = "basic"
 
     //Different states of our requests
     const val FAILED = -1

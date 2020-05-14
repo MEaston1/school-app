@@ -9,18 +9,16 @@ import com.example.schoolapp.view.ui.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : BaseActivity() {
-    /**
-     * Let's show our Splash animation using Animation class. We fade in our widgets.
-     */
-    private fun showSplashAnimation() {
+
+    private fun showSplashAnimation() {     // below drops the graduation hat logo
         val animation =  AnimationUtils.loadAnimation(this, R.anim.drop)
-        mLogo.startAnimation(animation)
+        mLogo.startAnimation(animation) // below loads the fade in animation for titles
         val fadeIn =  AnimationUtils.loadAnimation(this, R.anim.fade_in)
         mainTitle.startAnimation(fadeIn)
         subTitle.startAnimation(fadeIn)
     }
 
-    private fun goToLoginPage() {
+    private fun goToLoginPage() {         // Function delays travel to login activity
         val t: Thread = object : Thread() {
             override fun run() {
                 try {

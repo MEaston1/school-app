@@ -1337,6 +1337,7 @@ id aboutPointTenTV
 id aboutPointThreeTV
 id aboutPointTwelveTV
 id aboutPointTwoTV
+id absenceButton
 id absenceChildNameTV
 id absenceDatePublished
 id absenceDateUpdated
@@ -1451,8 +1452,6 @@ id bottomColour
 id buttonPanel
 id cParentPhoneNumberTV
 id cParentPhoneNumberTxt
-id calendarButton
-id calendarButton2
 id calligraphy_tag_id
 id cancel_action
 id cap_imageView_login
@@ -1635,7 +1634,6 @@ id messageButton
 id messagetextview_latest_text_view
 id middle
 id mini
-id moreButton
 id msgTV
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
@@ -1957,6 +1955,7 @@ layout view_color_area
 layout view_title_and_message
 menu absence_detail_page_menu
 menu detail_page_menu
+menu edit_delete_item_menu
 menu edit_item_menu
 menu listings_page_menu
 menu logout_menu
