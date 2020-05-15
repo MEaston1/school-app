@@ -278,15 +278,15 @@ object Utils {
     }
 
     @JvmStatic
-    fun get5MostRecentAbsences(news: ArrayList<Absence>): ArrayList<Absence> {
+    fun get5MostRecentAbsences(absence: ArrayList<Absence>): ArrayList<Absence> {
         val recent = ArrayList<Absence>()
-        if (news.isNullOrEmpty()) {
+        if (absence.isNullOrEmpty()) {
             return recent
         }
 
-        if (news.size >= 5) {
+        if (absence.size >= 5) {
             var i = 0
-            for (n in news.asReversed()) {
+            for (n in absence.asReversed()) {
                 if(i >= 5) {
                     break
                 }
@@ -294,7 +294,49 @@ object Utils {
                 i++
             }
         }else{
-            return news
+            return absence
+        }
+        return recent
+    }
+    @JvmStatic
+    fun get5MostRecentConsent(consent: ArrayList<Consent>): ArrayList<Consent> {
+        val recent = ArrayList<Consent>()
+        if (consent.isNullOrEmpty()) {
+            return recent
+        }
+
+        if (consent.size >= 5) {
+            var i = 0
+            for (n in consent.asReversed()) {
+                if(i >= 5) {
+                    break
+                }
+                recent.add(n)
+                i++
+            }
+        }else{
+            return consent
+        }
+        return recent
+    }
+    @JvmStatic
+    fun get5MostRecentMedical(medical: ArrayList<Medical>): ArrayList<Medical> {
+        val recent = ArrayList<Medical>()
+        if (medical.isNullOrEmpty()) {
+            return recent
+        }
+
+        if (medical.size >= 5) {
+            var i = 0
+            for (n in medical.asReversed()) {
+                if(i >= 5) {
+                    break
+                }
+                recent.add(n)
+                i++
+            }
+        }else{
+            return medical
         }
         return recent
     }
@@ -347,6 +389,29 @@ object Utils {
     @JvmStatic
     fun subtractListConsent(initialList: ArrayList<Consent>, toBeRemoved: ArrayList<Consent>): ArrayList<Consent> {
         val result = ArrayList<Consent>()
+
+        if (initialList.isNullOrEmpty()){
+            return result
+        }
+        if (toBeRemoved.isNullOrEmpty()){
+            return initialList
+        }
+        for (n in initialList){
+            var hit = false
+            for (n1 in toBeRemoved){
+                if (n.key.equals(n1.key,true)){
+                    hit = true
+                }
+            }
+            if (!hit){
+                result.add(n)
+            }
+        }
+        return result
+    }
+    @JvmStatic
+    fun subtractListMedical(initialList: ArrayList<Medical>, toBeRemoved: ArrayList<Medical>): ArrayList<Medical> {
+        val result = ArrayList<Medical>()
 
         if (initialList.isNullOrEmpty()){
             return result

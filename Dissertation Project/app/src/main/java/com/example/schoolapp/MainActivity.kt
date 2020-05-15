@@ -11,7 +11,6 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.schoolapp.common.CacheManager
-import com.example.schoolapp.common.CacheManager.CURRENT_USER
 import com.example.schoolapp.common.CacheManager.CURRENT_USER_PERMS
 import com.example.schoolapp.common.Constants.ADMIN_USER
 import com.example.schoolapp.common.Constants.BASIC_USER
@@ -139,7 +138,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
             R.id.nav_logout -> {
                 Toast.makeText(this, "Sign out clicked", Toast.LENGTH_SHORT).show()
                 CacheManager.CURRENT_USER=""
-                CacheManager.CURRENT_USER_PERMS=""
+                CURRENT_USER_PERMS=""
                 FirebaseAuth.getInstance().signOut()
                 val intent = Intent(this, RegisterActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)

@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.schoolapp.R
 import com.example.schoolapp.common.Constants.SUCCEEDED
 import com.example.schoolapp.common.Utils
+import com.example.schoolapp.common.Utils.C_MEM_CACHE
 import com.example.schoolapp.common.Utils.M_MEM_CACHE
 import com.example.schoolapp.data.model.entity.Medical
 import com.example.schoolapp.databinding.ModelBinding
@@ -32,18 +33,6 @@ class MedicalListingActivity : BaseActivity(),SearchView.OnQueryTextListener, Me
         "https://images.unsplash.com/photo-1580458072512-96ced1f43991?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80"
     )
 
-    // To set simple images
-    private var imageListener = ImageListener(fun(position: Int, imageView: ImageView) {
-        if (!networkImages[position].isNullOrEmpty()) {
-            Picasso.get().load(networkImages[position]).placeholder(R.drawable.placeholder)
-                .error(R.drawable.image_not_found).fit()
-                .centerCrop().into(imageView)
-        }else{
-            Picasso.get().load(R.drawable.school)
-                .error(R.drawable.image_not_found).fit()
-                .centerCrop().into(imageView)
-        }
-    })
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.listings_page_menu, menu)
         val searchItem = menu.findItem(R.id.action_search)
@@ -56,6 +45,7 @@ class MedicalListingActivity : BaseActivity(),SearchView.OnQueryTextListener, Me
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_medical_listing)
+        bindData()
     }
     private fun setupStuff() {
         adapter = object : EasyAdapter<Medical, ModelBinding>(R.layout.model) {
@@ -93,6 +83,16 @@ class MedicalListingActivity : BaseActivity(),SearchView.OnQueryTextListener, Me
                 }
             }
         }
+        adapter.clear(true)
+        medicalRV.layoutManager = LinearLayoutManager(this)
+        if(M_MEM_CACHE.size >= 5){
+            val recent = Utils.get5MostRecentMedical(M_MEM_CACHE)
+            adapter.addAll(Utils.subtractListMedical(M_MEM_CACHE, recent), true)
+        } else {
+            adapter.addAll(M_MEM_CACHE, true)
+        }
+        medicalRV.adapter = adapter
+
     }
     private fun bindData() {
         medicalViewModel().allMedical.observe(this, Observer { r ->
