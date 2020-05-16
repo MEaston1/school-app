@@ -2,8 +2,12 @@ package com.example.schoolapp.registerlogin
 
 
 import android.app.Activity
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
@@ -14,6 +18,7 @@ import com.example.schoolapp.R
 import com.example.schoolapp.models.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.messaging.FirebaseMessaging
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.activity_register.*
 import java.util.*
@@ -23,6 +28,7 @@ class RegisterActivity : AppCompatActivity() {  // class extends AppCompatActivi
     companion object{
         val TAG = "RegisterActivity"            // this replaces "RegisterActivity" in the log listeners to make the code shorter
     }
+    private val TOPIC = "announcements"
 
     override fun onCreate(savedInstanceState: Bundle?) {   //"onCreate" is the main function in every class, triggered when the specific activity is opened
         super.onCreate(savedInstanceState)
@@ -32,6 +38,11 @@ class RegisterActivity : AppCompatActivity() {  // class extends AppCompatActivi
             performRegister()
 
         }
+        createChannel(
+            getString(R.string.announcement_notification_channel_id),
+            getString(R.string.announcement_notification_channel_name)
+        )
+        subscribeTopic()
                                                                       //If the user already has an account when the register button is pressed...
         already_have_an_acount_text_view.setOnClickListener {
             Log.d(TAG, "Try to show login activity")            // sends a message through logcat to prove the function works
@@ -46,6 +57,31 @@ class RegisterActivity : AppCompatActivity() {  // class extends AppCompatActivi
             val intent = Intent(Intent.ACTION_PICK)
             intent.type = "image/*"
             startActivityForResult(intent, 0)
+        }
+    }
+    private fun createChannel(channelId: String, channelName: String) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            // Create channel to show notifications.
+            val notificationChannel = NotificationChannel(
+                channelId,
+                channelName,
+                NotificationManager.IMPORTANCE_HIGH
+            )
+                .apply {
+                    setShowBadge(false)
+                }
+
+            notificationChannel.enableLights(true)
+            notificationChannel.lightColor = Color.RED
+            notificationChannel.enableVibration(true)
+            notificationChannel.description = getString(R.string.announcement_notification_channel_description)
+
+            val notificationManager = getSystemService(
+                NotificationManager::class.java
+            )
+
+            notificationManager.createNotificationChannel(notificationChannel)
+
         }
     }
 
@@ -135,6 +171,18 @@ class RegisterActivity : AppCompatActivity() {  // class extends AppCompatActivi
                 Log.d(TAG, "Failed to set value to database ${it.message}")                 //logcat testing failure message
             }
     }
+
+    private fun subscribeTopic() {
+        FirebaseMessaging.getInstance().subscribeToTopic(TOPIC)
+            .addOnCompleteListener { task ->
+                var message = getString(R.string.message_subscribed)
+                if (!task.isSuccessful) {
+                    message = getString(R.string.message_subscribe_failed)
+                }
+            }
+        // [END subscribe_topics]
+    }
+
 }
 
 

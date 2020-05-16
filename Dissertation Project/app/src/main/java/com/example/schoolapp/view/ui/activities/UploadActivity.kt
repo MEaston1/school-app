@@ -3,6 +3,7 @@ package com.example.schoolapp.view.ui.activities
 import `in`.mayanknagwanshi.imagepicker.ImageSelectActivity
 import android.Manifest
 import android.app.Activity
+import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -11,6 +12,7 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.PermissionToken
@@ -28,6 +30,7 @@ import com.example.schoolapp.common.Utils.openActivity
 import com.example.schoolapp.common.Utils.receive
 import com.example.schoolapp.common.Utils.showInfoDialog
 import com.example.schoolapp.data.model.entity.News
+import com.example.schoolapp.notification.sendNotification
 import com.example.schoolapp.view.ui.base.BaseEditingActivity
 import kotlinx.android.synthetic.main.activity_upload.*
 import java.io.File
@@ -129,6 +132,7 @@ class UploadActivity : BaseEditingActivity() {
                     clearEditTexts(titleTxt!!, descriptionTxt!!, countryTxt!!, tagsTxt!!, datePublished!!)
                 }
             })
+
     }
 
     private fun update(news: News) {
@@ -167,7 +171,7 @@ class UploadActivity : BaseEditingActivity() {
             })
     }
 
-    private fun validateThenUpload() {
+    private fun validateThenUpload(context: Context) {
         if (validate(titleTxt, descriptionTxt, countryTxt)) {
             val n = News()
             n.title = valOf(titleTxt)
@@ -185,6 +189,11 @@ class UploadActivity : BaseEditingActivity() {
             }else{
                 upload(n)
             }
+            val notificationManager = ContextCompat.getSystemService(
+                context,
+                NotificationManager::class.java
+            ) as NotificationManager
+            notificationManager.sendNotification(valOf(titleTxt), context)
         } else {
             show("Please fill up all Fields First")
         }
@@ -242,10 +251,10 @@ class UploadActivity : BaseEditingActivity() {
     /*
       When user selects a menu item in toolbar
      */
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+     fun onOptionsItemSelected(item: MenuItem, context: Context): Boolean {
         when (item.itemId) {
             R.id.insertMenuItem -> {
-                validateThenUpload()
+                validateThenUpload(context)
                 return true
             }
             R.id.editMenuItem -> {

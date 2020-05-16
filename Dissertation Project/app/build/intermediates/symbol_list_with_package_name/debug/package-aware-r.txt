@@ -2030,6 +2030,9 @@ string amdp_time
 string amdp_time_placeholder
 string amdp_time_separator
 string amdp_year_picker_description
+string announcement_notification_channel_description
+string announcement_notification_channel_id
+string announcement_notification_channel_name
 string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
@@ -2070,10 +2073,13 @@ string google_storage_bucket
 string hello_first_fragment
 string hello_second_fragment
 string hide_bottom_view_on_scroll_behavior
+string message_subscribe_failed
+string message_subscribed
 string mtrl_chip_close_icon_content_description
 string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
 string next
+string notification_title
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -2083,6 +2089,7 @@ string previous
 string project_id
 string search_menu_title
 string second_fragment_label
+string snooze
 string status_bar_notification_info_overflow
 string title_activity_about
 string title_activity_consent_detail
