@@ -1,59 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.schoolapp">
+    package="com.app.parentconnect">
 
     <application
-        android:name=".App"
+        android:name="com.app.parentconnect.App"
         android:allowBackup="true"
         android:icon="@drawable/graduation_cap"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.ui.activities.AboutActivity">
+        <activity android:name="com.app.parentconnect.view.ui.activities.AboutActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
+                android:value="com.app.parentconnect.MainActivity"/>
         </activity>
         <activity
-            android:name=".view.ui.activities.ConsentUploadActivity"
+            android:name="com.app.parentconnect.view.ui.activities.ConsentUploadActivity"
             android:label="Editor"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="com.app.parentconnect.MainActivity"
             android:theme="@style/CRUDTheme" />
         <activity
-            android:name=".view.ui.activities.ConsentDetailActivity"
+            android:name="com.app.parentconnect.view.ui.activities.ConsentDetailActivity"
             android:label="@string/title_activity_consent_detail"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".view.ui.activities.AbsenceUploadActivity"
+        <activity android:name="com.app.parentconnect.view.ui.activities.AbsenceUploadActivity"
             android:label="Editor"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="com.app.parentconnect.MainActivity"
             android:theme="@style/CRUDTheme" />
-        <activity android:name=".view.ui.activities.AbsenceDetailActivity"
+        <activity android:name="com.app.parentconnect.view.ui.activities.AbsenceDetailActivity"
             android:label="Absence Reports"
-            android:parentActivityName=".view.ui.activities.AbsenceListingActivity"/>/>
-        <activity android:name=".view.ui.activities.AbsenceListingActivity"
+            android:parentActivityName="com.app.parentconnect.view.ui.activities.AbsenceListingActivity"/>
+        <activity android:name="com.app.parentconnect.view.ui.activities.AbsenceListingActivity"
             android:label="Absence Reports"
-            android:parentActivityName=".view.ui.activities.TeachersActivity"/>
-        <activity android:name=".view.ui.activities.ConsentListingActivity"
+            android:parentActivityName="com.app.parentconnect.view.ui.activities.TeachersActivity"/>
+        <activity android:name="com.app.parentconnect.view.ui.activities.ConsentListingActivity"
             android:label="Consent Forms"
-            android:parentActivityName=".view.ui.activities.TeachersActivity"/>
-        <activity android:name=".view.ui.activities.MedicalListingActivity"
+            android:parentActivityName="com.app.parentconnect.view.ui.activities.TeachersActivity"/>
+        <activity android:name="com.app.parentconnect.view.ui.activities.MedicalListingActivity"
             android:label="Medical Forms"
-            android:parentActivityName=".view.ui.activities.TeachersActivity"/>
-        <activity android:name=".view.ui.activities.MedicalDetailActivity"
+            android:parentActivityName="com.app.parentconnect.view.ui.activities.TeachersActivity"/>
+        <activity android:name="com.app.parentconnect.view.ui.activities.MedicalDetailActivity"
             android:label="Medical Report"
-            android:parentActivityName=".view.ui.activities.MedicalDetailActivity"/>/>
-        <activity android:name=".view.ui.activities.MedicalUploadActivity"
+            android:parentActivityName="com.app.parentconnect.view.ui.activities.MedicalDetailActivity"/>
+        <activity android:name="com.app.parentconnect.view.ui.activities.MedicalUploadActivity"
             android:label="Editor"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="com.app.parentconnect.MainActivity"
             android:theme="@style/CRUDTheme" />
-        <activity android:name=".view.ui.activities.TeachersActivity">
+        <activity android:name="com.app.parentconnect.view.ui.activities.TeachersActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.app.parentconnect.MainActivity" />
         </activity>
         <activity
-            android:name=".view.ui.activities.SplashActivity"
+            android:name="com.app.parentconnect.view.ui.activities.SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -61,40 +61,40 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".registerlogin.RegisterActivity" />
+        <activity android:name="com.app.parentconnect.registerlogin.RegisterActivity" />
         <activity
-            android:name=".registerlogin.LoginActivity"
+            android:name="com.app.parentconnect.registerlogin.LoginActivity"
             android:label="MyFeaturesList" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.app.parentconnect.MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".view.ui.activities.ListingActivity"
+            android:name="com.app.parentconnect.view.ui.activities.ListingActivity"
             android:label="Announcements"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="com.app.parentconnect.MainActivity" />
         <activity
-            android:name=".view.ui.activities.UploadActivity"
+            android:name="com.app.parentconnect.view.ui.activities.UploadActivity"
             android:label="Editor"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="com.app.parentconnect.MainActivity"
             android:theme="@style/CRUDTheme" />
-        <activity android:name=".messages.NewMessageActivity">
+        <activity android:name="com.app.parentconnect.messages.NewMessageActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".messages.LatestMessagesActivity" />
+                android:value="com.app.parentconnect.messages.LatestMessagesActivity" />
         </activity>
-        <activity android:name=".messages.ChatLogActivity">
+        <activity android:name="com.app.parentconnect.messages.ChatLogActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".messages.LatestMessagesActivity" />
+                android:value="com.app.parentconnect.messages.LatestMessagesActivity" />
         </activity>
         <activity
-            android:name=".view.ui.activities.DetailActivity"
+            android:name="com.app.parentconnect.view.ui.activities.DetailActivity"
             android:label="Announcements Reader "
-            android:parentActivityName=".view.ui.activities.ListingActivity" />
-        <activity android:name=".messages.LatestMessagesActivity">
+            android:parentActivityName="com.app.parentconnect.view.ui.activities.ListingActivity" />
+        <activity android:name="com.app.parentconnect.messages.LatestMessagesActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.app.parentconnect.MainActivity" />
         </activity>
     </application>
 

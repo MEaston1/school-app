@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.schoolapp"
+    package="com.app.parentconnect"
     android:targetSandboxVersion="2"
     android:versionCode="1"
     android:versionName="1.0" >
@@ -20,7 +20,7 @@
     <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
 
     <application
-        android:name="com.example.schoolapp.App"
+        android:name="com.app.parentconnect.App"
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
@@ -30,59 +30,57 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.example.schoolapp.view.ui.activities.AboutActivity" >
+        <activity android:name="com.app.parentconnect.view.ui.activities.AboutActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.app.parentconnect.MainActivity" />
         </activity>
         <activity
-            android:name="com.example.schoolapp.view.ui.activities.ConsentUploadActivity"
+            android:name="com.app.parentconnect.view.ui.activities.ConsentUploadActivity"
             android:label="Editor"
-            android:parentActivityName="com.example.schoolapp.MainActivity"
+            android:parentActivityName="com.app.parentconnect.MainActivity"
             android:theme="@style/CRUDTheme" />
         <activity
-            android:name="com.example.schoolapp.view.ui.activities.ConsentDetailActivity"
+            android:name="com.app.parentconnect.view.ui.activities.ConsentDetailActivity"
             android:label="@string/title_activity_consent_detail"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.example.schoolapp.view.ui.activities.AbsenceUploadActivity"
+            android:name="com.app.parentconnect.view.ui.activities.AbsenceUploadActivity"
             android:label="Editor"
-            android:parentActivityName="com.example.schoolapp.MainActivity"
+            android:parentActivityName="com.app.parentconnect.MainActivity"
             android:theme="@style/CRUDTheme" />
         <activity
-            android:name="com.example.schoolapp.view.ui.activities.AbsenceDetailActivity"
+            android:name="com.app.parentconnect.view.ui.activities.AbsenceDetailActivity"
             android:label="Absence Reports"
-            android:parentActivityName="com.example.schoolapp.view.ui.activities.AbsenceListingActivity" />
-/>
+            android:parentActivityName="com.app.parentconnect.view.ui.activities.AbsenceListingActivity" />
         <activity
-            android:name="com.example.schoolapp.view.ui.activities.AbsenceListingActivity"
+            android:name="com.app.parentconnect.view.ui.activities.AbsenceListingActivity"
             android:label="Absence Reports"
-            android:parentActivityName="com.example.schoolapp.view.ui.activities.TeachersActivity" />
+            android:parentActivityName="com.app.parentconnect.view.ui.activities.TeachersActivity" />
         <activity
-            android:name="com.example.schoolapp.view.ui.activities.ConsentListingActivity"
+            android:name="com.app.parentconnect.view.ui.activities.ConsentListingActivity"
             android:label="Consent Forms"
-            android:parentActivityName="com.example.schoolapp.view.ui.activities.TeachersActivity" />
+            android:parentActivityName="com.app.parentconnect.view.ui.activities.TeachersActivity" />
         <activity
-            android:name="com.example.schoolapp.view.ui.activities.MedicalListingActivity"
+            android:name="com.app.parentconnect.view.ui.activities.MedicalListingActivity"
             android:label="Medical Forms"
-            android:parentActivityName="com.example.schoolapp.view.ui.activities.TeachersActivity" />
+            android:parentActivityName="com.app.parentconnect.view.ui.activities.TeachersActivity" />
         <activity
-            android:name="com.example.schoolapp.view.ui.activities.MedicalDetailActivity"
+            android:name="com.app.parentconnect.view.ui.activities.MedicalDetailActivity"
             android:label="Medical Report"
-            android:parentActivityName="com.example.schoolapp.view.ui.activities.MedicalDetailActivity" />
-/>
+            android:parentActivityName="com.app.parentconnect.view.ui.activities.MedicalDetailActivity" />
         <activity
-            android:name="com.example.schoolapp.view.ui.activities.MedicalUploadActivity"
+            android:name="com.app.parentconnect.view.ui.activities.MedicalUploadActivity"
             android:label="Editor"
-            android:parentActivityName="com.example.schoolapp.MainActivity"
+            android:parentActivityName="com.app.parentconnect.MainActivity"
             android:theme="@style/CRUDTheme" />
-        <activity android:name="com.example.schoolapp.view.ui.activities.TeachersActivity" >
+        <activity android:name="com.app.parentconnect.view.ui.activities.TeachersActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.app.parentconnect.MainActivity" />
         </activity>
         <activity
-            android:name="com.example.schoolapp.view.ui.activities.SplashActivity"
+            android:name="com.app.parentconnect.view.ui.activities.SplashActivity"
             android:theme="@style/SplashTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -90,40 +88,40 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.schoolapp.registerlogin.RegisterActivity" />
+        <activity android:name="com.app.parentconnect.registerlogin.RegisterActivity" />
         <activity
-            android:name="com.example.schoolapp.registerlogin.LoginActivity"
+            android:name="com.app.parentconnect.registerlogin.LoginActivity"
             android:label="MyFeaturesList" />
         <activity
-            android:name="com.example.schoolapp.MainActivity"
+            android:name="com.app.parentconnect.MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.example.schoolapp.view.ui.activities.ListingActivity"
+            android:name="com.app.parentconnect.view.ui.activities.ListingActivity"
             android:label="Announcements"
-            android:parentActivityName="com.example.schoolapp.MainActivity" />
+            android:parentActivityName="com.app.parentconnect.MainActivity" />
         <activity
-            android:name="com.example.schoolapp.view.ui.activities.UploadActivity"
+            android:name="com.app.parentconnect.view.ui.activities.UploadActivity"
             android:label="Editor"
-            android:parentActivityName="com.example.schoolapp.MainActivity"
+            android:parentActivityName="com.app.parentconnect.MainActivity"
             android:theme="@style/CRUDTheme" />
-        <activity android:name="com.example.schoolapp.messages.NewMessageActivity" >
+        <activity android:name="com.app.parentconnect.messages.NewMessageActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".messages.LatestMessagesActivity" />
+                android:value="com.app.parentconnect.messages.LatestMessagesActivity" />
         </activity>
-        <activity android:name="com.example.schoolapp.messages.ChatLogActivity" >
+        <activity android:name="com.app.parentconnect.messages.ChatLogActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".messages.LatestMessagesActivity" />
+                android:value="com.app.parentconnect.messages.LatestMessagesActivity" />
         </activity>
         <activity
-            android:name="com.example.schoolapp.view.ui.activities.DetailActivity"
+            android:name="com.app.parentconnect.view.ui.activities.DetailActivity"
             android:label="Announcements Reader "
-            android:parentActivityName="com.example.schoolapp.view.ui.activities.ListingActivity" />
-        <activity android:name="com.example.schoolapp.messages.LatestMessagesActivity" >
+            android:parentActivityName="com.app.parentconnect.view.ui.activities.ListingActivity" />
+        <activity android:name="com.app.parentconnect.messages.LatestMessagesActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.app.parentconnect.MainActivity" />
         </activity>
         <activity
             android:name="com.karumi.dexter.DexterActivity"
@@ -134,7 +132,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.example.schoolapp.provider"
+            android:authorities="com.app.parentconnect.provider"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data
@@ -182,7 +180,7 @@
 
         <provider
             android:name="androidx.work.impl.WorkManagerInitializer"
-            android:authorities="com.example.schoolapp.workmanager-init"
+            android:authorities="com.app.parentconnect.workmanager-init"
             android:directBootAware="false"
             android:exported="false"
             android:multiprocess="true" />
@@ -266,7 +264,7 @@
 
         <provider
             android:name="com.squareup.picasso.PicassoProvider"
-            android:authorities="com.example.schoolapp.com.squareup.picasso"
+            android:authorities="com.app.parentconnect.com.squareup.picasso"
             android:exported="false" />
         <!--
              FirebaseMessagingService performs security checks at runtime,
@@ -320,7 +318,7 @@
 
         <provider
             android:name="com.google.firebase.provider.FirebaseInitProvider"
-            android:authorities="com.example.schoolapp.firebaseinitprovider"
+            android:authorities="com.app.parentconnect.firebaseinitprovider"
             android:exported="false"
             android:initOrder="100" />
 
@@ -330,7 +328,7 @@
 
         <provider
             android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-            android:authorities="com.example.schoolapp.lifecycle-process"
+            android:authorities="com.app.parentconnect.lifecycle-process"
             android:exported="false"
             android:multiprocess="true" />
 
