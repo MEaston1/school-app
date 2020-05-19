@@ -8,7 +8,7 @@
     tools:context=".view.ui.activities.MedicalListingActivity">
 
     <include
-        android:id="@+id/progressCard"
+        android:id="@+id/medicalProgressCard"
         layout="@layout/_state"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -22,7 +22,6 @@
         fontPath="fonts/chalkboard.ttf"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
         android:padding="1dp"
         android:text="Recent Medical Forms"
         android:textAlignment="center"

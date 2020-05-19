@@ -1347,6 +1347,7 @@ id absenceHeaderTxt
 id absenceRV
 id absenceReasonTxt
 id absenceTodayRV
+id absenceprogressCard
 id absencetodayTV
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
@@ -1475,6 +1476,7 @@ id consentDatePublished
 id consentDateUpdated
 id consentHeaderTxt
 id consentPickedImg
+id consentProgressCard
 id consentRV
 id consentVerificationTV
 id constraint_layout
@@ -1624,6 +1626,7 @@ id medicalDescriptionTV
 id medicalDescriptionTxt
 id medicalHeaderTxt
 id medicalPickedImg
+id medicalProgressCard
 id medicalRV
 id menu_new_message
 id message
