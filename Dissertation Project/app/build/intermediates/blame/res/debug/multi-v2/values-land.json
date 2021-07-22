@@ -1,0 +1,55 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\Matthew\\Documents\\GitHub\\school-app\\Dissertation Project\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Matthew\\.gradle\\caches\\transforms-2\\files-2.1\\4190def4ef5d7c8dad9d2f596b8779e8\\material-1.0.0\\res\\values-land\\values-land.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "10",
+                        "endOffsets": "222"
+                    },
+                    "to": {
+                        "startLines": "9",
+                        "startColumns": "4",
+                        "startOffsets": "520",
+                        "endLines": "12",
+                        "endColumns": "10",
+                        "endOffsets": "687"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Matthew\\.gradle\\caches\\transforms-2\\files-2.1\\5c7ecdebcec4a6f24a7f98b97315f2e5\\jetified-material-datepicker-1.3\\res\\values-land\\values-land.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,120,190,250",
+                        "endColumns": "64,69,59,60",
+                        "endOffsets": "115,185,245,306"
+                    },
+                    "to": {
+                        "startLines": "5,6,7,8",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "264,329,399,459",
+                        "endColumns": "64,69,59,60",
+                        "endOffsets": "324,394,454,515"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Matthew\\.gradle\\caches\\transforms-2\\files-2.1\\49079e178ced2a85cc4e9dd78b9c9b4a\\appcompat-1.0.2\\res\\values-land\\values-land.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,125,196",
+                        "endColumns": "69,70,67",
+                        "endOffsets": "120,191,259"
+                    }
+                }
+            ]
+        }
+    ]
+}
